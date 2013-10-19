@@ -70,15 +70,15 @@ class Account
   end
   
   def topic_list
-    self.topics.join(",")
+    self.topics.join(",") if self.topics
   end
   
   def date_list
-    self.dates.join(",")
+    self.dates.join(",") if self.dates
   end
   
   def location_list
-    self.locations.join(",")
+    self.locations.join(",") if self.locations
   end
   
   #role
