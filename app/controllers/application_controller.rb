@@ -7,4 +7,9 @@ class ApplicationController < ActionController::Base
     return nil unless session[:account_id]
     @current_account ||= Account.find(session[:account_id])
   end
+  
+  def require_account
+    redirect_to(login_accounts_path, :notice => '需要登录才可以进进行操作.') unless current_account
+  end
+  
 end

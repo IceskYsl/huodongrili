@@ -1,5 +1,6 @@
 # coding: utf-8
 class AccountsController < ApplicationController
+  before_filter :require_account,:only=>[:profile]
 
   #聊天人列表
   def index
@@ -7,6 +8,17 @@ class AccountsController < ApplicationController
   
   #得到自己独一无二link  www.huodongrili.com/u/username
   def show
+  end
+  
+  def profile
+    
+  end
+  
+  def edit
+    @account = current_account
+  end
+  
+  def update
   end
   
   
