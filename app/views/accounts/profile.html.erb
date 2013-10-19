@@ -1,0 +1,33 @@
+
+<div class="row-fluid">
+
+
+<div class="span12 well">
+	<h2>Profile</h2>
+	
+	<div class="box">
+		<h2>My infos</h2>
+		<p>如下是我的个人信息，可以通过微信修改个人信息.</p>
+		<div class="box">
+			<%=image_tag @current_account.avatar%>
+		</div>
+		<div class="box">
+			username: <%=@current_account.username%>
+		</div>	
+		<div class="box">
+			email: <%=@current_account.email%>
+		</div>
+ 
+		<div class="box">
+			bio: <%=@current_account.bio%>
+		</div>
+		<div class="box">
+			roles: <%=@current_account.roles%>
+		</div>
+	</div>
+	
+ 
+		
+</div>
+ 
+</div>
