@@ -9,7 +9,7 @@ Huodong::Application.routes.draw do
   root 'index#index'
   
   #for bind account
-  get '/auth/:provider/callback/' => 'accounts#bind'
+  get '/auth/:provider/callback' => 'accounts#bind'
   
   get '/about/index' => 'about#index'
 

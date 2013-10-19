@@ -44,7 +44,9 @@ class AccountsController < ApplicationController
   
   #登出
   def logout
-    
+    session[:account_id] = nil
+    session[:account_username] = nil    
+    redirect_to(root_path, :notice => '登出成功，欢迎下次再来.')
   end
   
   #帐号设置
