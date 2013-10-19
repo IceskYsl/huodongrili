@@ -2,22 +2,39 @@
 <div class="row-fluid">
 	<div class="span12 well">
 		<div id="home">
+			<div class="pull-right">
+				<%= link_to("+分享故事", new_blog_path, :class=>"btn btn-success")%>
+			</div>
 			<h2>真实故事..</h2>
-		    <p>欢迎你来到这里，我们正在开发中...</p>
-			<p>如果你想参与其中,请联系我们(iceskysl@gmail.com)...</p>
-			<!-- <a version="1.0" class="qzOpenerDiv" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_likeurl" target="_blank">赞</a><script  src="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20111107&style=2&showcount=1&width=130&height=30" charset="utf-8" defer="defer" ></script> -->
-	
-	
-			<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />
-			<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />
-			<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />
-			<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />
-			<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />
-			<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />
-			<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />
-			<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />
-			<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />
- 			<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />
+			 <p>欢迎你来到这里，我们正在开发中...</p>
+			<hr />
+			
+		 
+
+              <!--Start Post-->
+              <%@items.each  do |blog|%>
+              <div class="post" style="margin-bottom: 40px;">
+                      <div class="p-head">
+                              <h3><%=link_to blog.title,blog_path(blog)%>  </h3>
+                              <p class="p-cat">By: <%= raw blog.account.try(:username) %> Tag:<%=blog_tags_tag(blog)%> </p>
+                              <small class="p-time">
+                                      <strong class="day"><%=blog.created_at.day%></strong>
+                                      <strong class="month"><%=blog.created_at.strftime("%b")%></strong>
+                                      <strong class="year"><%=blog.created_at.year%></strong>
+                              </small>
+                      </div>
+                      <div class="p-con">                
+                              <%=simple_format blog.body%>                                
+    </div>
+       </div>
+       <%end%>
+               <!-- Pagination links -->
+              <%= will_paginate @items %>
+
+ 			
+		   
+		 
+	 
 		</div>
 	</div>
 </div>

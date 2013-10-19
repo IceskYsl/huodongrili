@@ -11,9 +11,15 @@ gem 'therubyracer'
 gem 'omniauth-google-oauth2'
 
 # Mongoid 辅助插件
-gem "mongoid"#, "3.0.6"
+gem 'mongoid', '~> 4.0.0', :github => 'mongoid/mongoid'
+# gem "mongoid"#, "3.0.6"
 # gem 'mongoid_auto_increment_id' #, "0.5.0"
 # gem 'mongoid_rails_migrations' #, '~> 0.0.14'
+gem 'mongoid_auto_increment_id', "0.6.2"
+
+ 
+gem 'markdown-ruby-china',:github => 'IceskYsl/markdown-ruby-china'
+
 
 # 分页
 gem 'will_paginate_mongoid'

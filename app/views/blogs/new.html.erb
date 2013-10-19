@@ -1,0 +1,55 @@
+<div class="row-fluid">
+	<div class="span12 well">
+  
+
+			<%= form_for @blog  do |f| %>
+	  <fieldset>
+	    <legend>撰写故事</legend>
+	    <%= render "shared/error_messages", :target => @blog %>
+
+
+
+	    <div class="clearfix">
+	      <%= f.label :title %>
+	      <div class="input">
+	        <%= f.text_field :title, :class => "xxlarge" %>
+	      </div>
+	    </div>
+
+ 
+
+
+		<div class="clearfix">
+	      <%= f.label "小组规则（对内）" %>
+	      <div class="input">
+		 	<%= f.text_area :body, :rows => "10",:class => "xxlarge" %>
+	      </div>
+	    </div>
+
+
+	    <div class="clearfix">
+	      <%= f.label :tag_list %>
+	      <div class="input">
+	        <%= f.text_field :tag_list, :class => "xxlarge" %>
+			<br />
+			小组关键词(多个标签可用[, ，| /]分割)
+	      </div>
+	    </div>
+
+
+
+	    <div class="actions">
+	      <%= f.submit "保存", :class => "btn primary", :disable_with => "保存ing.." %>
+	    </div>
+	<% end %> 
+
+
+	<div class="clearfix"></div>
+
+	</div>
+		
+ 
+	
+ 
+ 	</div>
+</div>

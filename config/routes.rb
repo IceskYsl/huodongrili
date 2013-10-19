@@ -10,6 +10,8 @@ Huodong::Application.routes.draw do
   
   #for bind account
   get '/auth/:provider/callback/' => 'accounts#bind'
+  
+  get '/about/index' => 'about#index'
 
   resources :accounts do 
     collection do
@@ -25,8 +27,11 @@ Huodong::Application.routes.draw do
   resources :blogs do
     collection do 
       get :list
+      get :tag
     end    
   end
+  
+ 
   
   resources :chats do
     collection do 

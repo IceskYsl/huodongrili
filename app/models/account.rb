@@ -8,6 +8,14 @@ class Account
   include Mongoid::BaseModel
   extend OmniauthCallbacks
   
+  
+  STATE = {
+     :delete => -2, #暂停
+     :draft => -1, #隐身
+     :init => 0, #初始化
+     :normal => 1#可聊天（配图）
+   }
+   
   field :login
   field :username
   field :email, :type => String, :default => ""
@@ -17,6 +25,7 @@ class Account
   field :tags, :type => Array, :default => ["user"] #设置标签（“单身求解救”，“吃货”……）
   
   # 聊天者
+  field :state, :type => Integer, :default => STATE[:init]
   field :image
   field :locations, :type => Array, :default => [] #设置自己合适的地点（选地图标注，地图比较方便大家查看）
   field :dates, :type => Array, :default => [] #设置自己可行的时间（是个List）

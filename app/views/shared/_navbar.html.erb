@@ -10,10 +10,10 @@
                   </div>
                   <div class="navbar-collapse collapse navbar-responsive-collapse">
                     <ul class="nav navbar-nav">
-                      <li class="active"><a href="/">首页</a></li>
- 					  <li><%=link_to("找我们聊天", chats_path )%></li>
-					  <li><%=link_to("真实故事", blogs_path )%></li>
- 					  <li><%=link_to("入门指南", blogs_path )%></li>
+                      <li class="<%=is_current('index',controller.controller_name)%>"><a href="/">首页</a></li>
+ 					  <li class="<%=is_current('chats',controller.controller_name)%>"><%=link_to("找我们聊天", chats_path )%></li>
+					  <li class="<%=is_current('blogs',controller.controller_name)%>"><%=link_to("真实故事", blogs_path )%></li>
+ 					  <li class="<%=is_current('about',controller.controller_name)%>"><%=link_to("入门指南", "/about/index" )%></li>
                     </ul>
 
                     <form class="navbar-form navbar-left">
@@ -35,7 +35,7 @@
                       <ul class="dropdown-menu">
 				          <li><%= link_to("我的主页", profile_accounts_path)%></li>
 				          <li><%= link_to("个人设置", edit_account_path(current_account))%></li>
-				          <li><%= link_to("写故事", new_blog_path)%></li>
+				          <li><%= link_to("分享故事", new_blog_path)%></li>
 
 					 	  <%if current_account && current_account.has_role?("admin") %>
 						    <li><%= link_to("管理后台", cpanel_root_path)%></li>

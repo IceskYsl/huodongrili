@@ -1,10 +1,31 @@
 GIT
+  remote: git://github.com/IceskYsl/markdown-ruby-china.git
+  revision: 906f09b43e86983836344d5c605bc6db582264e5
+  specs:
+    markdown-ruby-china (0.3)
+      md_emoji
+      nokogiri
+      pygments.rb
+      rails_autolink
+      redcarpet
+
+GIT
   remote: git://github.com/anjlab/bootstrap-rails.git
   revision: 8826a3bfbbcfb18709f0e8bb0eff9cf921a479c3
   specs:
     anjlab-bootstrap-rails (3.0.0.3)
       railties (>= 3.0)
       sass (>= 3.2)
+
+GIT
+  remote: git://github.com/mongoid/mongoid.git
+  revision: a9b962f17de359d3173cf0ece813c9020803d3af
+  specs:
+    mongoid (4.0.0)
+      activemodel (~> 4.0.0)
+      moped (~> 2.0.beta3)
+      origin (~> 1.0)
+      tzinfo (~> 0.3.37)
 
 GEM
   remote: http://ruby.taobao.org/
@@ -39,7 +60,7 @@ GEM
       descendants_tracker (~> 0.0.1)
       ice_nine (~> 0.9)
     backports (3.3.5)
-    bson (1.9.2)
+    bson (2.0.0.rc3)
     builder (3.1.4)
     coercible (0.2.0)
       backports (~> 3.0, >= 3.1.0)
@@ -52,7 +73,6 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     descendants_tracker (0.0.3)
-    durran-validatable (2.0.1)
     equalizer (0.0.7)
     erubis (2.7.0)
     exception_notification (4.0.1)
@@ -88,23 +108,26 @@ GEM
     json (1.8.1)
     jwt (0.1.8)
       multi_json (>= 1.5)
-    leshill-will_paginate (2.3.11)
     libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    md_emoji (1.0.1)
+      railties (>= 3.1.0)
+      redcarpet (>= 2.0)
     mime-types (1.25)
+    mini_portile (0.5.1)
     minitest (4.7.5)
-    mongo (1.9.2)
-      bson (~> 1.9.2)
-    mongoid (1.0.6)
-      activesupport (>= 2.2.2)
-      durran-validatable (>= 2.0.1)
-      leshill-will_paginate (>= 2.3.11)
-      mongo (>= 0.18.2)
+    mongoid_auto_increment_id (0.6.2)
+      mongoid (>= 3.1.0, < 4.1.0)
+    moped (2.0.0.beta3)
+      bson (~> 2.0.0.rc3)
+      optionable (~> 0.1.1)
     multi_json (1.8.2)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -120,7 +143,13 @@ GEM
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
+    optionable (0.1.1)
+    origin (1.1.0)
     polyglot (0.3.3)
+    posix-spawn (0.3.6)
+    pygments.rb (0.5.2)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.1.0)
     rack (1.5.2)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -136,6 +165,8 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.0.0)
       sprockets-rails (~> 2.0.0)
+    rails_autolink (1.1.4)
+      rails (> 3.1)
     railties (4.0.0)
       actionpack (= 4.0.0)
       activesupport (= 4.0.0)
@@ -144,6 +175,7 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (3.0.0)
     ref (1.0.5)
     sass (3.2.12)
     sass-rails (4.0.1)
@@ -187,6 +219,7 @@ GEM
     will_paginate_mongoid (2.0.1)
       mongoid
       will_paginate (~> 3.0)
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
@@ -200,7 +233,9 @@ DEPENDENCIES
   grape-entity
   jbuilder (~> 1.2)
   jquery-rails
-  mongoid
+  markdown-ruby-china!
+  mongoid (~> 4.0.0)!
+  mongoid_auto_increment_id (= 0.6.2)
   omniauth-google-oauth2
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)

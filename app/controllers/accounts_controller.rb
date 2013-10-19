@@ -15,6 +15,7 @@ class AccountsController < ApplicationController
     
   end
 
+
   
   #登出
   def logout
