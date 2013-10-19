@@ -18,7 +18,7 @@ class Account
         account
       #创建帐号和绑定  
       else
-        Account.new do |account|
+        account = Account.new do |account|
           account.email = data["email"].present?  ?  data["email"] : "#{provider}+#{uid}@tagskill.com"
           account.login = data["email"]
           account.username = data['name']
