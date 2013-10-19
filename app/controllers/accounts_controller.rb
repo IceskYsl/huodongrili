@@ -11,7 +11,17 @@ class AccountsController < ApplicationController
   end
   
   def profile
-    
+  end
+  
+  def add
+    @account = current_account
+  end
+  
+  def ping
+    # Account.create(:email => "iceskysl@gmail.com",:username=>"YaoShanglang",:avatar => "https://lh6.googleusercontent.com/-YE_1r6r72Yg/AAAAAAAAAAI/AAAAAAAAL4M/jrDWisl3W7w/photo.jpg")
+    @account = Account.find(1)
+    set_session
+    redirect_to(root_path, :notice => "登录测试帐号成功。")        
   end
   
   def edit
@@ -19,6 +29,13 @@ class AccountsController < ApplicationController
   end
   
   def update
+    @account = Account.unscoped.find(session[:account_id])
+    params.permit!
+    if @account.update_attributes(params[:account])
+      redirect_to(profile_accounts_path, :notice => '资料编辑成功～')
+    else
+      redirect_to(profile_accounts_path, :notice => '资料编辑失败～')
+    end
   end
   
   

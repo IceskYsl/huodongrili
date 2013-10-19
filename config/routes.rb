@@ -15,8 +15,9 @@ Huodong::Application.routes.draw do
 
   resources :accounts do 
     collection do
+      get :ping
       get :profile
-      get :list
+      get :add
       get :login
       get :logout
       get :bind

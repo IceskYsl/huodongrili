@@ -7,7 +7,7 @@
 	
 	<div class="box">
 		<h2>My infos</h2>
-		<p>如下是我的个人信息，可以通过微信修改个人信息.</p>
+		<p>如下是我的个人基本信息.</p>
 		<div class="box">
 			<%=image_tag @current_account.avatar%>
 		</div>
@@ -24,6 +24,22 @@
 		<div class="box">
 			roles: <%=@current_account.roles%>
 		</div>
+	</div>
+	
+	<div class="box">
+		<h2>聊天资料</h2>
+		<p>如下是我的聊天资料</p>
+		<div class="box">
+			topics: <%=@current_account.topics%>
+		</div>
+		<div class="box">
+			locations: <%=@current_account.locations%>
+		</div>	
+		<div class="box">
+			dates: <%=@current_account.dates%>
+		</div>
+ 
+ 
 	</div>
 	
  

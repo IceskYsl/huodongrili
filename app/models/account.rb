@@ -47,11 +47,38 @@ class Account
   has_many :blogs
   has_many :chats
   
+  attr_accessor :location_list,:date_list,:topic_list
+  
   
   def bind_service(response)
     provider = response["provider"]
     uid = response["uid"].to_s
     authorizations.create(:provider => provider , :uid => uid )
+  end
+  
+  before_save :split_tags
+  def split_tags
+    if !self.location_list.blank? and self.locations.blank?
+      self.locations = self.location_list.split(/,|，/).collect { |tag| tag.strip }.uniq
+    end
+    if !self.date_list.blank? and self.dates.blank?
+      self.dates = self.date_list.split(/,|，/).collect { |tag| tag.strip }.uniq
+    end
+    if !self.topic_list.blank? and self.topics.blank?
+      self.topics = self.topic_list.split(/,|，/).collect { |tag| tag.strip }.uniq
+    end
+  end
+  
+  def topic_list
+    self.topics.join(",")
+  end
+  
+  def date_list
+    self.dates.join(",")
+  end
+  
+  def location_list
+    self.locations.join(",")
   end
   
   #role
