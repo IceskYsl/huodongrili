@@ -54,4 +54,17 @@ class Account
     authorizations.create(:provider => provider , :uid => uid )
   end
   
+  #role
+  def has_role?(role)
+    self.roles.include?(role)
+  end
+  
+  def add_role(role)
+    self.push(:roles, role)
+  end
+  
+  def del_role(role)
+    self.pull(:roles, role)
+  end
+  
 end
