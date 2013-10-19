@@ -1,10 +1,39 @@
 Huodong::Application.routes.draw do
+  get "users/index"
+  get "index/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root 'index#index'
+  
+  #for bind account
+  get '/auth/:provider/callback/' => 'accounts#bind'
 
+  resources :accounts do 
+    collection do
+      get :profile
+      get :list
+      get :login
+      get :logout
+      #post
+      post :login
+    end
+  end
+  
+  resources :blogs do
+    collection do 
+      get :list
+    end    
+  end
+  
+  resources :chats do
+    collection do 
+      get :list
+    end    
+  end
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

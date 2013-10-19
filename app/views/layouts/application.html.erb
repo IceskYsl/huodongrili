@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Huodong</title>
+  <title>活动日历</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
 </head>
 <body>
+ <%= render :partial => '/shared/navbar'%>
+ <div class="container">
+	<%= yield %>
+ </div>
+ <%= render :partial => '/shared/footer'%>
 
-<%= yield %>
+
+<script>
+    $(".dropdown-toggle").dropdown()
+</script>
 
 </body>
 </html>

@@ -1,8 +1,37 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
+#source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+gem 'execjs'
+gem 'therubyracer'
+
+#omniauth
+gem 'omniauth-google-oauth2'
+
+# Mongoid 辅助插件
+gem "mongoid"#, "3.0.6"
+# gem 'mongoid_auto_increment_id' #, "0.5.0"
+# gem 'mongoid_rails_migrations' #, '~> 0.0.14'
+
+# 分页
+gem 'will_paginate_mongoid'
+
+#for api
+gem 'grape'
+gem 'grape-entity'
+
+#tags
+# gem 'mongoid_taggable_on'
+
+#tools
+gem 'exception_notification'
+
+#bootstrap
+# gem "twitter-bootstrap-rails"
+# gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',:github => 'anjlab/bootstrap-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

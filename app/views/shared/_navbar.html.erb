@@ -1,0 +1,52 @@
+<div class="navbar navbar-default">
+                <div class="container">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">活动日历</a>
+                  </div>
+                  <div class="navbar-collapse collapse navbar-responsive-collapse">
+                    <ul class="nav navbar-nav">
+                      <li class="active"><a href="/">首页</a></li>
+ 					  <li><%=link_to("找我们聊天", chats_path )%></li>
+					  <li><%=link_to("真实故事", blogs_path )%></li>
+ 					  <li><%=link_to("入门指南", blogs_path )%></li>
+                    </ul>
+
+                    <form class="navbar-form navbar-left">
+                      <input type="text" class="form-control col-lg-8" placeholder="Todo...">
+                    </form>
+
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="#">+约我</a></li>
+					<%unless session[:account_id] %>
+ 					<li class="dropdown" id="login">
+					<a href="#login" class="dropdown-toggle" data-toggle="dropdown" >登录<b class="caret"></b></a>
+				        <ul class="dropdown-menu">
+							<li><%= link_to("Google账号", "/auth/google_oauth2")%></li>
+ 				        </ul>
+					  </li>
+					<%else%>
+					<li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Zoelee <b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+				          <li><%= link_to("我的主页", profile_accounts_path)%></li>
+				          <li><%= link_to("个人设置", edit_account_path(current_account))%></li>
+				          <li><%= link_to("写故事", new_blog_path)%></li>
+
+					 	  <%if current_account && current_account.has_role?("admin") %>
+						    <li><%= link_to("管理后台", cpanel_root_path)%></li>
+						  <%end%>
+                          <li class="divider"></li>
+				          <li><%= link_to("退出", logout_accounts_path)%></li>
+                      </ul>
+                    </li>
+					<%end%>
+
+                    </ul>
+                  </div><!-- /.nav-collapse -->
+                </div><!-- /.container -->
+              </div>
