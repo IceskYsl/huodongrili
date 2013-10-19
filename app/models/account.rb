@@ -22,7 +22,7 @@ class Account
   field :tagline
   field :bio
   field :avatar
-  field :tags, :type => Array, :default => ["user"] #设置标签（“单身求解救”，“吃货”……）
+  field :tags, :type => Array, :default => [] #设置标签（“单身求解救”，“吃货”……）
   
   # 聊天者
   field :state, :type => Integer, :default => STATE[:init]

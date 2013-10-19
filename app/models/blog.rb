@@ -16,7 +16,7 @@ class Blog
   field :lede #摘要
   field :body #文章
   field :body_html #文章
-  field :tags, :type => Array, :default => ["user"] #设置标签（“单身求解救”，“吃货”……）
+  field :tags, :type => Array, :default => [] #设置标签（“单身求解救”，“吃货”……）
   field :state, :type => Integer, :default => STATE[:normal]
   
   attr_accessor :tag_list
