@@ -19,8 +19,10 @@ Huodong::Application.routes.draw do
       get :list
       get :login
       get :logout
+      get :bind
       #post
       post :login
+      post :bind
     end
   end
   
