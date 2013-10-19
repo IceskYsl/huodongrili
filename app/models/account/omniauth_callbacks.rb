@@ -34,10 +34,7 @@ class Account
       end
     end # end find_or_create_for_google
     
-    #github
-    def find_or_create_for_github
-    end
-  
+ 
     
   end
 end

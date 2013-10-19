@@ -47,4 +47,11 @@ class Account
   has_many :blogs
   has_many :chats
   
+  
+  def bind_service(response)
+    provider = response["provider"]
+    uid = response["uid"].to_s
+    authorizations.create(:provider => provider , :uid => uid )
+  end
+  
 end
