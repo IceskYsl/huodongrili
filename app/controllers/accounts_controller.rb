@@ -1,6 +1,6 @@
 # coding: utf-8
 class AccountsController < ApplicationController
-  before_filter :require_account,:only=>[:profile]
+  before_filter :require_account,:only=>[:profile,:add,:edit]
 
   #聊天人列表
   def index
