@@ -19,7 +19,7 @@
                     </form>
 
                     <ul class="nav navbar-nav navbar-right">
-                      <li><%= link_to("我的聊天设置", add_accounts_path)%></li>
+                      <li><%= link_to("+我的聊天设置", add_accounts_path)%></li>
 					<%unless session[:account_id] %>
  					<li class="dropdown" id="login">
 					<a href="#login" class="dropdown-toggle" data-toggle="dropdown" >登录<b class="caret"></b></a>
