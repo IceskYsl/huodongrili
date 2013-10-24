@@ -10,7 +10,6 @@
                   </div>
                   <div class="navbar-collapse collapse navbar-responsive-collapse">
                     <ul class="nav navbar-nav">
-                      <li class="<%=is_current('index',controller.controller_name)%>"><a href="/">首页</a></li>
  					  <li class="<%=is_current('chats',controller.controller_name)%>"><%=link_to("找我们聊天", chats_path )%></li>
 					  <li class="<%=is_current('blogs',controller.controller_name)%>"><%=link_to("真实故事", blogs_path )%></li>
  					  <li class="<%=is_current('about',controller.controller_name)%>"><%=link_to("入门指南", "/about/index" )%></li>
