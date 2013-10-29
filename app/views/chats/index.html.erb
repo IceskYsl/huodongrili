@@ -19,10 +19,10 @@
 						<p>
 							<%=i.bio%>
 						</p>
-						<p>
-							<%=link_to image_tag("weibo.png",:size=>"16x16",:alt=>"免费聊天"),i.weibo,:target=>"_blank" if i.weibo%>
-							<%=link_to image_tag("zhihu.png",:size=>"16x16",:alt=>"免费聊天"),i.zhihu,:target=>"_blank" if i.zhihu%>
-							<%=link_to image_tag("douban.png",:size=>"16x16",:alt=>"免费聊天"),i.douban,:target=>"_blank" if i.douban%>							
+						<p class="pull-right">
+							<%=link_to image_tag("weibo.png",:size=>"16x16",:alt=>"免费聊天"),i.weibo,:target=>"_blank" unless i.weibo.blank? %>
+							<%=link_to image_tag("zhihu.png",:size=>"16x16",:alt=>"免费聊天"),i.zhihu,:target=>"_blank" unless i.zhihu.blank? %>
+							<%=link_to image_tag("douban.png",:size=>"16x16",:alt=>"免费聊天"),i.douban,:target=>"_blank" unless i.douban.blank?%>							
 							
 						</p>
 					</div>
