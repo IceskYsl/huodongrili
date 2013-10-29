@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require twitter/bootstrap
+ *= require_tree ./sprites/
  *= require_self
  *= require_tree .
  */
@@ -64,3 +65,72 @@ h3{
 .alert-info{background-color:#d9edf7;border-color:#bce8f1;color:#3a87ad}
 .alert-block{padding-top:14px;padding-bottom:14px}
 .alert-block>p,.alert-block>ul{margin-bottom:0}.alert-block p+p{margin-top:5px}
+
+
+legend {
+display: block;
+font-size:14px;
+margin-bottom:10px;
+margin-top:10px;
+-webkit-padding-start: 2px;
+-webkit-padding-end: 2px;
+border: none;
+border-image-source: initial;
+border-image-slice: initial;
+border-image-width: initial;
+border-image-outset: initial;
+border-image-repeat: initial;
+}
+
+fieldset {
+display: block;
+-webkit-margin-start: 2px;
+-webkit-margin-end: 2px;
+-webkit-padding-before: 0.35em;
+-webkit-padding-start: 0.75em;
+-webkit-padding-end: 0.75em;
+-webkit-padding-after: 0.625em;
+border: 2px groove threedface;
+border-image-source: initial;
+border-image-slice: initial;
+border-image-width: initial;
+border-image-outset: initial;
+border-image-repeat: initial;
+min-width: -webkit-min-content;
+}
+
+fieldset {
+border: 1px solid #e4e4e4;
+margin: 0;
+}
+
+.avatar img{
+	width:120px;
+	height:120px;
+}
+
+.chat h3{
+   border-bottom: 1px solid #e3e3e3;
+   padding-bottom: 6px;
+   margin-bottom: 10px;
+}
+
+.profile h3{
+	font-size: 16px;
+	margin-top: 20px;
+}
+
+.chat a{
+
+}
+
+.chat p a, a:active, .chat a:hover {
+  outline: 0; 
+  text-decoration: none; 
+  color: #000;
+}
+
+.apply_form{
+	width:99%;
+}
+ 

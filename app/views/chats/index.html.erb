@@ -1,28 +1,27 @@
  	<div class="span12 well">
- 			<h2>找我们聊天..</h2>
-		    <p>欢迎你来到这里，我们正在开发中...</p>
+ 			<h2>约聊天..</h2>
+		    <p>欢迎你来到这里约我们聊天， 选择你感兴趣的人开始精彩的聊天之旅吧...</p>
 			<hr />
  
 			 <div class="container chats">
 			<div class="row-fluid">
- 				<%(1..10).each do |i|%>
-				<div class="item span3">
-				<h3>大猫布丁</h3>
-				<div class="pe-wp-default">
-					<p>
-						<img class="alignnone size-medium wp-image-373" alt="bear" src="http://dev.huodongrili.com/wp-content/uploads/2013/07/QQ20130919-2-300x223.png" width="280" height="220" data-pinit="registered">
-					</p>
-					<p>
-						<font color="red">标签1,标签2,标签3 </font><br>
-						喜欢听很多很多不同的故事~<br>
-						了解人心，比旅行更有趣~<br>
-						人心，才是最大最大的旅行地图~~<br>
-						若在北京~~欢迎找我聊天玩儿~~<br>
-						<strong>请尽量选择{免费聊天}按钮，北京地区，只要时间够，我都会通过的。</strong><br>
-					</p>
-					<a href="https://yoopay.cn/event/65081801"><img alt="" width="120" height="40" src="http://dev.huodongrili.com/wp-content/uploads/2013/09/free.png"></a>
+ 				<%@items.each do |i|%>
+				<a href="/accounts/<%=i.id%>">
+				<div class="item span3 chat">
+					<h3><%=i.nickname%></h3>
+					<div class="pe-wp-default">
+						<p>
+							<%=image_tag i.image,:size=>"280x220",:alt=>"#{i.username}"%>
+						</p>
+						<p>
+							<font color="red"> <%=i.tag_list%></font> 
+						</p>
+						<p>
+							<%=i.bio%>
+						</p>
+					</div>
 				</div>
-				</div>
+				</a>
  			<%end%>
  </div> </div>
  	</div>

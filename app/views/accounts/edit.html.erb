@@ -2,12 +2,136 @@
 <div class="row-fluid">
 	<div class="span12 well">
 		<div id="home">
-			<h2>帐号设置..</h2>
-		    <p>欢迎你来到这里，我们正在开发中...</p>
-		<hr />
-		 
+			<h2>我的设置..</h2>
+		    <p>完善聊天资料，方便其他人约哟...</p>
+			<hr />
+		 	<%= form_for @account  do |f| %>
+		    <%= render "shared/error_messages", :target => @account %>
+ 			
+			<fieldset>
+				<legend>个人资料</legend>
+		
+		    <div class="clearfix">
+		      <%= f.label :avatar %>
+		      <div class="avatar">
+				<%=image_tag @current_account.avatar%>
+		      </div>
+		    </div>	
+ 			    <div class="clearfix">
+			      <%= f.label :username %>
+			      <div class="input">
+			        <%= f.text_field :username, :class => "xxlarge" %>
+			      </div>
+			    </div>
+
+			    <div class="clearfix">
+			      <%= f.label :email %>
+			      <div class="input">
+			        <%= f.text_field :email, :class => "xxlarge" %>
+			      </div>
+			    </div>
+			    <div class="clearfix">
+			      <%= f.label :tagline %>
+			      <div class="input">
+			        <%= f.text_field :tagline, :class => "xxlarge" %>
+			      </div>
+			    </div>
+ 			</fieldset>				
+		
+		<br />	
+		
+		<div class="clearfix">
+	      <div class="input">
+	        <%= f.select(:is_chat, Account.chat_collection, {:class=>'wiki-edit',:required => true}, :onchange=>"hiddenChat(this.value)")%>
+	      </div>
+	    </div>
+	
+ 	<br />	
+			<fieldset id="chat" style="display:none">
+			<legend>聊天设置</legend>
+		    <div class="clearfix">
+		      <%= f.label "我的昵称" %>
+		      <div class="input">
+		        <%= f.text_field :nickname, :class => "xxlarge" %>
+		      </div>
+		    </div>
+			
+		    <div class="clearfix">
+		      <%= f.label "我的形象（照片地址）" %>
+		      <div class="input">
+		        <%= f.text_field :image, :class => "xxlarge" %>
+		      </div>
+		    </div>
+			
+		    <div class="clearfix">
+		      <%= f.label "个人介绍" %>
+		      <div class="input">
+			 	<%= f.text_area :bio, :rows => "5",:class => "xxlarge" %>
+		      </div>
+		    </div>
+		
+		    <div class="clearfix">
+		      <%= f.label "我的个人标签(比如：工程师,画家,小清新)" %>
+		      <div class="input">
+		        <%= f.text_field :tag_list, :class => "xxlarge" %>
+		      </div>
+		    </div>
+		
+			
+		    <div class="clearfix">
+		      <%= f.label "合适的聊天话题" %>
+		      <div class="input">
+			    <%= f.text_field :topic_list, :class => "xxlarge" %>		    
+		      </div>
+		    </div>
+		
+		    <div class="clearfix">
+		      <%= f.label "合适的聊天地点" %>
+		      <div class="input">
+				<%= f.text_field :location_list, :class => "xxlarge" %>
+		      </div>
+		    </div>
+		
+		    <div class="clearfix">
+		      <%= f.label "合适的聊天时间" %>
+		      <div class="input">
+				<%= f.text_field :date_list, :class => "xxlarge" %>
+		      </div>
+		    </div>
+			
+            <%["zhihu","weibo","douban"].each do |s|%>
+		    <div class="clearfix">
+		      <%= f.label s %>
+		      <div class="input">
+		        <%= f.text_field :"#{s}", :class => "xxlarge" %>
+		      </div>
+		    </div>
+			<%end%>
+			
+			</fieldset>				
+		
+ 			<br />	
+
+			    <div class="actions">
+			      <%= f.submit "保存", :class => "btn primary", :disable_with => "保存ing.." %>
+			    </div>
+			<% end %>
 
  
 		</div>
 	</div>
 </div>
+
+
+
+<script type="text/javascript">
+function hiddenChat(x)
+{
+	// alert(x)
+	var y=document.getElementById("chat")
+	if (x == "0"){ //day
+		document.getElementById("chat").style.display = 'none';
+	}else{
+		document.getElementById("chat").style.display = 'block';	}
+}
+</script>

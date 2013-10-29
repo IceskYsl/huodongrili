@@ -16,6 +16,10 @@ class Account
      :normal => 1#可聊天（配图）
    }
    
+   IS_CHAT={"不可以被约聊天"=>0,"可以被约聊天"=>1}
+   
+  field :state, :type => Integer, :default => STATE[:init]
+   
   field :login
   field :username
   field :email, :type => String, :default => ""
@@ -25,7 +29,8 @@ class Account
   field :tags, :type => Array, :default => [] #设置标签（“单身求解救”，“吃货”……）
   
   # 聊天者
-  field :state, :type => Integer, :default => STATE[:init]
+  field :is_chat, :type => Integer, :default => 0
+  field :nickname
   field :image
   field :locations, :type => Array, :default => [] #设置自己合适的地点（选地图标注，地图比较方便大家查看）
   field :dates, :type => Array, :default => [] #设置自己可行的时间（是个List）
@@ -47,8 +52,16 @@ class Account
   has_many :blogs
   has_many :chats
   
-  attr_accessor :location_list,:date_list,:topic_list
+  attr_accessor :location_list,:date_list,:topic_list,:tag_list
+  scope :normal, where(:state.gt => STATE[:init])
+  scope :can_chat, where(:is_chat.gt => STATE[:init])
   
+  
+  
+  
+  def self.chat_collection
+      IS_CHAT.collect { |s| [s[0], s[1]]}
+  end
   
   def bind_service(response)
     provider = response["provider"]
@@ -67,6 +80,13 @@ class Account
     if !self.topic_list.blank? and self.topics.blank?
       self.topics = self.topic_list.split(/,|，/).collect { |tag| tag.strip }.uniq
     end
+    if !self.tag_list.blank? #and self.tags.blank?
+      self.tags = self.tag_list.split(/,|，/).collect { |tag| tag.strip }.uniq
+    end
+  end
+  
+  def tag_list
+    self.tags.join(",") if self.tags
   end
   
   def topic_list

@@ -1,6 +1,6 @@
 # coding: utf-8
 class AccountsController < ApplicationController
-  before_filter :require_account,:only=>[:profile,:add,:edit]
+  before_filter :require_account,:only=>[:profile,:edit]
 
   #聊天人列表
   def index
@@ -8,14 +8,14 @@ class AccountsController < ApplicationController
   
   #得到自己独一无二link  www.huodongrili.com/u/username
   def show
+    @account = Account.find(params[:id])
+    @chat = Chat.new
   end
   
   def profile
   end
   
-  def add
-    @account = current_account
-  end
+ 
   
   def ping
     # Account.create(:email => "iceskysl@gmail.com",:username=>"YaoShanglang",:avatar => "https://lh6.googleusercontent.com/-YE_1r6r72Yg/AAAAAAAAAAI/AAAAAAAAL4M/jrDWisl3W7w/photo.jpg")
@@ -29,12 +29,13 @@ class AccountsController < ApplicationController
   end
   
   def update
-    @account = Account.unscoped.find(session[:account_id])
+    @account = current_account #Account.unscoped.find(session[:account_id])
     params.permit!
     if @account.update_attributes(params[:account])
-      redirect_to(profile_accounts_path, :notice => '资料编辑成功～')
+      @account.state = 1
+      redirect_to(root_path, :notice => '资料编辑成功～')
     else
-      redirect_to(profile_accounts_path, :notice => '资料编辑失败～')
+      redirect_to(root_path, :notice => '资料编辑失败～')
     end
   end
   

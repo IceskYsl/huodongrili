@@ -1,0 +1,63 @@
+
+<div class="row-fluid">
+	
+ 
+
+<div class="span9 well profile">
+ 	
+	<h3><%=@account.nickname%></h3>
+	<p><%=@account.tagline%></p>
+	
+	<div class="box">
+		<%=image_tag @account.image,:size=>"280x220"%>
+	</div>
+	
+	<h3>我的标签</h3>
+	<div class="box">
+		<%=@account.tag_list%>
+	</div>
+	
+	<h3>自我介绍</h3>
+	<div class="box">
+		<%=@account.bio%>
+	</div>
+	
+
+	
+	<h3>方便的时间</h3>
+	<div class="box">
+		<ul>
+		<%@account.dates.each do |t|%>
+			<li><%=t%></li>
+		<%end%>
+		</ul>
+ 	</div>
+	
+	<h3>方便的地点</h3>
+	<div class="box">
+		<ul>
+		<%@account.locations.each do |t|%>
+			<li><%=t%></li>
+		<%end%>
+		</ul>
+ 	</div>
+	<h3>感兴趣的话题</h3>
+	<div class="box">
+		<ul>
+		<%@account.topics.each do |t|%>
+			<li><%=t%></li>
+		<%end%>
+		</ul>
+	</div>
+	
+	<%= render :partial => '/chats/item'%>
+ 
+	<p>
+		ps.<br />
+		请仔细填写，才可以大大提高约成功的概率~
+	</p>
+
+
+</div>
+ 
+</div>

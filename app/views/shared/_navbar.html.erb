@@ -10,8 +10,10 @@
                   </div>
                   <div class="navbar-collapse collapse navbar-responsive-collapse">
                     <ul class="nav navbar-nav">
- 					  <li class="<%=is_current('chats',controller.controller_name)%>"><%=link_to("找我们聊天", chats_path )%></li>
-					  <li class="<%=is_current('blogs',controller.controller_name)%>"><%=link_to("真实故事", blogs_path )%></li>
+ 					  <li class="<%=is_current('chats',controller.controller_name)%>"><%=link_to("约聊天", chats_path )%></li>
+					  <li class="<%=is_current('blogs',controller.controller_name)%>"><%=link_to("故事集", blogs_path )%></li>
+					  <li class="<%=is_current('blogs',controller.controller_name)%>"><%=link_to("客户端", client_abouts_path )%></li>
+					
                     </ul>
 
                     <form class="navbar-form navbar-left">
@@ -19,8 +21,7 @@
                     </form>
 
                     <ul class="nav navbar-nav navbar-right">
-                      <li><%= link_to("+我的聊天设置", add_accounts_path)%></li>
-					<%unless session[:account_id] %>
+					<%unless session[:account_id] %>	
  					<li class="dropdown" id="login">
 					<a href="#login" class="dropdown-toggle" data-toggle="dropdown" >登录<b class="caret"></b></a>
 				        <ul class="dropdown-menu">
@@ -29,10 +30,13 @@
  				        </ul>
 					  </li>
 					<%else%>
+                    
 					<li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%=session[:account_username]%> <b class="caret"></b></a>
                       <ul class="dropdown-menu">
-				          <li><i class="icon-user"></i><%= link_to("我的主页", profile_accounts_path)%></li>
+				          <li><i class="icon-user"></i><%= link_to("我的主页", account_path(current_account.id))%></li>
+				  		  <li><%= link_to("我的设置", edit_account_path(current_account.id))%></li>
+				
 					 	  <%if current_account && current_account.has_role?("admin") %>
 						    <li><%= link_to("管理后台", cpanel_root_path)%></li>
 						  <%end%>
