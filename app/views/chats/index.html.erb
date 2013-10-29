@@ -11,7 +11,7 @@
 					<h3><%=i.nickname%></h3>
 					<div class="pe-wp-default">
 						<p>
-							<%=image_tag i.image,:size=>"280x220",:alt=>"#{i.username}"%>
+							<%=image_tag i.image,:size=>"280x220",:alt=>"#{i.username}" if i.image%>
 						</p>
 						<p>
 							<font color="red"> <%=i.tag_list%></font> 
@@ -19,7 +19,12 @@
 						<p>
 							<%=i.bio%>
 						</p>
-			
+						<p>
+							<%=link_to image_tag("weibo.png",:size=>"16x16",:alt=>"免费聊天"),i.weibo,:target=>"_blank" if i.weibo%>
+							<%=link_to image_tag("zhihu.png",:size=>"16x16",:alt=>"免费聊天"),i.zhihu,:target=>"_blank" if i.zhihu%>
+							<%=link_to image_tag("douban.png",:size=>"16x16",:alt=>"免费聊天"),i.douban,:target=>"_blank" if i.douban%>							
+							
+						</p>
 					</div>
 				</div>
 				</a>

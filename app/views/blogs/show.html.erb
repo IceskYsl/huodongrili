@@ -6,7 +6,7 @@
   <div class="blog" style="margin-bottom: 40px;">
           <div class="p-head">
                   <h2><%=link_to @blog.title,blog_path(@blog)%>  </h2>
-                  <p class="p-cat">By: <%= raw @blog.account.try(:username) %> ,   Tag: <%=blog_tags_tag(@blog)%> </p>
+                  <p class="p-cat">By: <%= raw @blog.account.try(:nickname) %> ,   Tag: <%=blog_tags_tag(@blog)%> </p>
                   <small class="p-time">
                           <strong class="day"><%=@blog.created_at.day%></strong>
                           <strong class="month"><%=@blog.created_at.strftime("%b")%></strong>
@@ -18,7 +18,7 @@
        </div>
 
            <div class="p-con-author">        
-                  作者： <%= raw @blog.account.try(:username) %>  <br />
+                  作者： <%= raw @blog.account.try(:nickname) %>  <br />
                   原文地址： <%=link_to @blog.title,blog_path(@blog)%> 
           </div>
 
