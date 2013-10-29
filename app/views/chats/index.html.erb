@@ -11,7 +11,7 @@
 					<h3><%=i.nickname%></h3>
 					<div class="pe-wp-default">
 						<p>
-							<%=image_tag i.image,:size=>"280x220",:alt=>"#{i.username}" if i.image%>
+							<%=image_tag i.image,:size=>"280x220",:alt=>"#{i.username}" unless i.image.blank?%>
 						</p>
 						<p>
 							<font color="red"> <%=i.tag_list%></font> 
