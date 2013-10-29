@@ -20,6 +20,8 @@ gem 'mongoid_auto_increment_id', "0.6.2"
  
 gem 'markdown-ruby-china',:github => 'IceskYsl/markdown-ruby-china'
 
+gem 'protected_attributes'
+
 
 # 分页
 gem 'will_paginate_mongoid'

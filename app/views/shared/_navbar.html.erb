@@ -12,12 +12,12 @@
                     <ul class="nav navbar-nav">
  					  <li class="<%=is_current('chats',controller.controller_name)%>"><%=link_to("约聊天", chats_path )%></li>
 					  <li class="<%=is_current('blogs',controller.controller_name)%>"><%=link_to("故事集", blogs_path )%></li>
-					  <li class="<%=is_current('abouts',controller.controller_name)%>"><%=link_to("客户端", client_abouts_path )%></li>
+					  <li class="<%=is_current('about',controller.controller_name)%>"><%=link_to("客户端", client_abouts_path )%></li>
 					
                     </ul>
 
                     <form class="navbar-form navbar-left">
-                      <input type="text" class="form-control col-lg-8" placeholder="Todo...">
+                      <input type="text" class="form-control col-lg-8" placeholder="Searching...">
                     </form>
 
                     <ul class="nav navbar-nav navbar-right">
