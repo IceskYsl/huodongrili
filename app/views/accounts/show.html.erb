@@ -5,13 +5,25 @@
 
 <div class="span9 well profile">
  	
-	<h3><%=@account.nickname%></h3>
-	<p><%=@account.tagline%></p>
-	
-	<div class="box">
-		<%=image_tag @account.image,:size=>"280x220"%>
+	<div class="profile-base item apply_form">
+		
+		<div class="pull-left">
+			<%=image_tag @account.avatar,:size=>"80x80"%>
+		</div>
+		
+		<div class="profile_info pull-left" >
+			<h3><%=@account.nickname%></h3>
+			<p><%=@account.tagline%></p>
+			<p>
+				<%=link_to image_tag("weibo.png",:size=>"16x16",:alt=>"免费聊天"),@account.weibo,:target=>"_blank" unless @account.weibo.blank? %>
+				<%=link_to image_tag("zhihu.png",:size=>"16x16",:alt=>"免费聊天"),@account.zhihu,:target=>"_blank" unless @account.zhihu.blank? %>
+				<%=link_to image_tag("douban.png",:size=>"16x16",:alt=>"免费聊天"),@account.douban,:target=>"_blank" unless @account.douban.blank?%>
+			</p>
+		</div>
 	</div>
 	
+
+	<div class="profile-items">
 	<h3>我的标签</h3>
 	<div class="box">
 		<%=@account.tag_list%>
@@ -56,7 +68,8 @@
 		</ul>
 	</div>
 	<%end%>
-	
+
+	</div>	
 	<%= render :partial => '/chats/item'%>
  
 	<p>
