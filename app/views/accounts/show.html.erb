@@ -23,7 +23,7 @@
 	</div>
 	
 
-	
+	<%if @account.dates%>
 	<h3>方便的时间</h3>
 	<div class="box">
 		<ul>
@@ -32,7 +32,10 @@
 		<%end%>
 		</ul>
  	</div>
+	<%end%>
 	
+	
+	<%if @account.locations%>
 	<h3>方便的地点</h3>
 	<div class="box">
 		<ul>
@@ -41,6 +44,9 @@
 		<%end%>
 		</ul>
  	</div>
+	<%end%>
+	
+	<%if @account.topics%>
 	<h3>感兴趣的话题</h3>
 	<div class="box">
 		<ul>
@@ -49,6 +55,7 @@
 		<%end%>
 		</ul>
 	</div>
+	<%end%>
 	
 	<%= render :partial => '/chats/item'%>
  
