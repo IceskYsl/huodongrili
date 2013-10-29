@@ -17,7 +17,7 @@
 							<font color="red"> <%=i.tag_list%></font> 
 						</p>
 						<p>
-							<%=i.bio%>
+							<%=simple_format i.bio%>
 						</p>
 						<p class="pull-right">
 							<%=link_to image_tag("weibo.png",:size=>"16x16",:alt=>"免费聊天"),i.weibo,:target=>"_blank" unless i.weibo.blank? %>
