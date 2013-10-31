@@ -1,5 +1,6 @@
 # coding: utf-8
 class BlogsController < ApplicationController
+  before_filter :require_account,:only=>[:new,:create,:edit,:update]
   
   def index
     page = params[:page] || 1

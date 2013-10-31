@@ -1,0 +1,17 @@
+<p>
+	<label><%= @user.username %>, 你好</label><br />
+   
+	你和<%=@account.username %>约聊天的申请已经通过啦，请准时赴约哟~<br />
+	
+	<br />
+	——--如下是聊天备忘信息-----<br />
+	聊天时间：   <%=@chat.when%><br />
+	聊天地点：   <%=@chat.location%><br />
+	聊天内容：   <%=@chat.topic%>   <br />
+	其他备注：   <br />
+	<%=@chat.body%> 	
+</p>
+<p>
+	聊天结束后可以将自己的聊天故事分享到活动日历 
+</p>
+

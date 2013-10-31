@@ -18,7 +18,7 @@ gem 'mongoid', '~> 4.0.0', :github => 'mongoid/mongoid'
 gem 'mongoid_auto_increment_id', "0.6.2"
 
  
-gem 'markdown-ruby-china',:github => 'IceskYsl/markdown-ruby-china'
+# gem 'markdown-ruby-china',:github => 'IceskYsl/markdown-ruby-china'
 
 gem 'protected_attributes'
 

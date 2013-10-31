@@ -1,0 +1,16 @@
+<p>
+	<label><%= @account.username %>, 你好</label><br />
+  
+	<%= @user.username %> 约您见面：<br />
+	聊天时间：   <%=@chat.when%><br />
+	聊天地点：   <%=@chat.location%><br />
+	聊天内容：   <%=@chat.topic%>   <br />
+	其他备注：   <br />
+	<%=@chat.body%> 	
+</p>
+<p>
+	您是否愿意见面？<br />
+	同意请点击链接：<a href="http://lab.huodongrili.com/chats/confirm/<%=@chat.id%>">http://lab.huodongrili.com/chats/confirm/<%=@chat.id%></a><br />
+	不想见面请直接忽略。
+</p>
+

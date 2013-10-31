@@ -1,4 +1,5 @@
 Huodong::Application.routes.draw do
+  get "search/index"
   get "users/index"
   get "index/index"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -13,6 +14,8 @@ Huodong::Application.routes.draw do
   
   get '/about/index' => 'about#index'
   get '/abouts/client' => 'about#client'  
+  
+  get "/search" => "search#index", as: 'search'
   
 
   resources :accounts do 
@@ -42,6 +45,8 @@ Huodong::Application.routes.draw do
     collection do 
       get :list
       get :apply
+      get :confirm
+      post :confirm
     end    
   end
   
