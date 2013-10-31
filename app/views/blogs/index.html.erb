@@ -16,7 +16,7 @@
               <div class="post" style="margin-bottom: 40px;">
                       <div class="p-head">
                               <h3><%=link_to blog.title,blog_path(blog)%>  </h3>
-                              <p class="p-cat">By: <%= raw blog.account.try(:nickname) %> Tag:<%=blog_tags_tag(blog)%> </p>
+                              <p class="p-cat">By: <%= raw blog.account.try(:username) %> Tag:<%=blog_tags_tag(blog)%> </p>
                               <small class="p-time">
                                       <strong class="day"><%=blog.created_at.day%></strong>
                                       <strong class="month"><%=blog.created_at.strftime("%b")%></strong>
@@ -24,16 +24,13 @@
                               </small>
                       </div>
                       <div class="p-con">                
-                              <%=simple_format blog.body%>                                
+                              <%=simple_format blog.body_html%>                                
     </div>
        </div>
        <%end%>
                <!-- Pagination links -->
               <%= will_paginate @items %>
 
- 			
-		   
-		 
 	 
 		</div>
 	</div>

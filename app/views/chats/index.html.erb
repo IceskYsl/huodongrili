@@ -8,7 +8,7 @@
  				<%@items.each do |i|%>
 				<a href="/accounts/<%=i.id%>">
 				<div class="item span3 chat">
-					<h3><%=i.nickname%></h3>
+					<h3><%=i.username%></h3>
 					<div class="pe-wp-default">
 						<p>
 							<%=image_tag i.image,:size=>"280x220",:alt=>"#{i.username}" unless i.image.blank?%>
