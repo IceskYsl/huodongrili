@@ -60,9 +60,11 @@
 			<legend>聊天设置</legend>
 
 			<div class="clearfix">
-		      <div class="input">
-		        <%= f.select(:is_chat, Account.chat_collection, {:class=>'wiki-edit',:required => true})%>
+		      <div class="xxlarge">
+		        <%= f.select(:is_chat, Account.chat_collection, {} , {:class=>'large form-control'})%>
 		      </div>
+				<p class="help-block"> </p>
+		
 		    </div>
 		
 		    <div class="clearfix">
