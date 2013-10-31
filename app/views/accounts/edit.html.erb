@@ -55,18 +55,16 @@
  			</fieldset>				
 		
 		<br />	
-		
-		<div class="clearfix">
-	      <div class="input">
-	        <%= f.select(:is_chat, Account.chat_collection, {:class=>'wiki-edit',:required => true})%>
-	      </div>
-	    </div>
-	
- 	<br />	
-			<fieldset id="chat" style="display:none">
+ 
+			<fieldset id="chat">
 			<legend>聊天设置</legend>
 
-			
+			<div class="clearfix">
+		      <div class="input">
+		        <%= f.select(:is_chat, Account.chat_collection, {:class=>'wiki-edit',:required => true})%>
+		      </div>
+		    </div>
+		
 		    <div class="clearfix">
 		      <%= f.label "我的形象（照片地址）" %>
 		      <div class="input">
