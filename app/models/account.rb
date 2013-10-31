@@ -29,6 +29,7 @@ class Account
   field :tags, :type => Array, :default => [] #设置标签（“单身求解救”，“吃货”……）
   
   # 聊天者
+  field :seq, :type => Integer, :default => 1 #排序，越大的往前
   field :is_chat, :type => Integer, :default => 0
   field :nickname
   field :city
@@ -48,6 +49,8 @@ class Account
   field :twitter
   field :facebook
   field :google
+  
+
   
   embeds_many :authorizations
   

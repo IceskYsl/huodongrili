@@ -18,16 +18,16 @@
 		
 		<br />
 		    <div class="clearfix">
-		      <%= f.label :email %>
+		      <%= f.label '邮件地址' %>
 		      <div class="input">
-		        <%= f.text_field :email, :class => "xxlarge",:readonly=>true,:disabled=>"disabled" %>
+				<%=@account.email%>
 		      </div>
 				<p class="help-block">不可以修改哟</p>
   	
 		    </div>
 		
  			    <div class="clearfix">
-			      <%= f.label :username %>
+			      <%= f.label "你的名字" %>
 			      <div class="input">
 			        <%= f.text_field :username, :class => "xxlarge" %>
 			      </div>
@@ -35,7 +35,7 @@
 			    </div>
 			
  			    <div class="clearfix">
-			      <%= f.label :city %>
+			      <%= f.label '你的城市' %>
 			      <div class="input">
 			        <%= f.text_field :city, :class => "xxlarge" %>
 			      </div>
@@ -45,7 +45,7 @@
 
 			
 			    <div class="clearfix">
-			      <%= f.label :tagline %>
+			      <%= f.label '一句话签名' %>
 			      <div class="input">
 			        <%= f.text_field :tagline, :class => "xxlarge" %>
 			      </div>
@@ -58,7 +58,7 @@
 		
 		<div class="clearfix">
 	      <div class="input">
-	        <%= f.select(:is_chat, Account.chat_collection, {:class=>'wiki-edit',:required => true}, :onchange=>"hiddenChat(this.value)")%>
+	        <%= f.select(:is_chat, Account.chat_collection, {:class=>'wiki-edit',:required => true})%>
 	      </div>
 	    </div>
 	
@@ -109,15 +109,36 @@
 				<%= f.text_field :date_list, :class => "xxlarge" %>
 		      </div>
 		    </div>
-			
-            <%["website","zhihu","weibo","douban"].each do |s|%>
+		
 		    <div class="clearfix">
-		      <%= f.label s %>
+		      <%= f.label "个人博客" %>
 		      <div class="input">
-		        <%= f.text_field :"#{s}", :class => "xxlarge" %>
+				<%= f.text_field :website, :class => "xxlarge" %>
 		      </div>
 		    </div>
-			<%end%>
+		
+		    <div class="clearfix">
+		      <%= f.label "知复主页" %>
+		      <div class="input">
+				<%= f.text_field :zhihu, :class => "xxlarge" %>
+		      </div>
+		    </div>
+		
+		    <div class="clearfix">
+		      <%= f.label "微博地址" %>
+		      <div class="input">
+				<%= f.text_field :weibo, :class => "xxlarge" %>
+		      </div>
+		    </div>
+		
+		    <div class="clearfix">
+		      <%= f.label "豆瓣主页" %>
+		      <div class="input">
+				<%= f.text_field :douban, :class => "xxlarge" %>
+		      </div>
+		    </div>
+			
+ 
 			
 			</fieldset>				
 		
@@ -135,14 +156,3 @@
 
 
 
-<script type="text/javascript">
-function hiddenChat(x)
-{
-	// alert(x)
-	var y=document.getElementById("chat")
-	if (x == "0"){ //day
-		document.getElementById("chat").style.display = 'none';
-	}else{
-		document.getElementById("chat").style.display = 'block';	}
-}
-</script>
