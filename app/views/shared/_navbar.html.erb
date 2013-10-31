@@ -7,23 +7,22 @@
                       <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/">
-						<i class="glyphicon glyphicon-home"></i>
 						活动日历
 					</a>
                   </div>
                   <div class="navbar-collapse collapse navbar-responsive-collapse">
                     <ul class="nav navbar-nav">
 	
-					  <li class="<%=is_current('index',controller.controller_name)%>">	
+					  <li class="nav_index <%=is_current('index',controller.controller_name)%>">	
 						<%=link_to(raw(image_tag "index.png",:size=>"16x16",:alt=>"首页") + "首页", root_path )%>
 					  </li>
 
- 					  <li class="<%=is_current('chats',controller.controller_name)%>">						
+ 					  <li class="<%=nav_chats is_current('chats',controller.controller_name)%>">						
 						<%=link_to(raw(image_tag "chat.png",:size=>"16x16",:alt=>"约聊天") + " 约聊天", chats_path )%>
 					  </li>
-					  <li class="<%=is_current('blogs',controller.controller_name)%>">
+					  <li class="<%=nav_blogs is_current('blogs',controller.controller_name)%>">
 						<%=link_to(raw(image_tag "blog.png",:size=>"16x16",:alt=>"故事集")+" 故事集", blogs_path )%></li>
-					  <li class="<%=is_current('about',controller.controller_name)%>">
+					  <li class="<%=nav_about is_current('about',controller.controller_name)%>">
 						<%=link_to(raw(image_tag "d.png",:size=>"16x16",:alt=>"客户端")+" 客户端", client_abouts_path )%></li>
                     </ul>
 
