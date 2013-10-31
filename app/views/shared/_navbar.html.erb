@@ -15,7 +15,7 @@
                     <ul class="nav navbar-nav">
 	
 	  <li class="<%=is_current('index',controller.controller_name)%>">	
-		<%=image_tag "index.png",:size=>"16x16",:alt=>"首页"%><%=link_to("首页", root_path )%>
+		<%=link_to(raw(<%=image_tag \"index.png\",:size=>\"16x16\",:alt=>\"首页\"%>) + "首页", root_path )%>
 	  </li>
 
 	
