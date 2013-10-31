@@ -1,0 +1,61 @@
+<div class="span12 well">
+		<h2>聊天申请确认..</h2>
+	    <p>查阅约聊天的申请，开始聊天吧...</p>
+		<hr />
+
+		 <div class="container chats">
+		<div class="row-fluid">
+<div class="item apply_form">	
+<h3>聊天申请信息</h3>
+<%= form_for @chat  do |f| %>
+<br />
+<div class="clearfix">
+  <%= f.label "聊天者" %>
+  <div class="input">
+		<%=link_to @chat.user.try(:username),account_path(@chat.user),:target=>"_blank"%>
+  </div>
+</div>
+
+
+<br />
+<div class="clearfix">
+  <%= f.label "聊天时间" %>
+  <div class="input">
+		<%=@chat.when%>
+  </div>
+</div>
+
+<br />
+<div class="clearfix">
+  <%= f.label "聊天地点" %>
+  <div class="input">
+		<%=@chat.location%>
+  </div>
+</div>
+<br />
+<div class="clearfix">
+  <%= f.label "聊天话题" %>
+  <div class="input">
+		<%=@chat.topic%>
+  </div>
+</div>
+<br />
+<div class="clearfix">
+  <%= f.label "备注" %>
+  <div class="input">
+		<%=@chat.body%>
+  </div>
+</div>
+
+
+	<br />
+	<%= hidden_field_tag :id,params[:id], :class => "xlarge" %>
+    <div class="actions">
+      <%= f.submit "接受聊天", :class => "btn btn-primary", :disable_with => "邀请发送ing.." %>
+    </div>
+
+<% end %>
+</div>
+</div>
+</div>
+</div>

@@ -22,14 +22,14 @@
 		      <div class="input">
 				<%=@account.email%>
 		      </div>
-				<p class="help-block">不可以修改哟</p>
+				<p class="help-block"></p>
   	
 		    </div>
 		
  			    <div class="clearfix">
 			      <%= f.label "您的昵称" %>
 			      <div class="input">
-			        <%= f.text_field :username, :class => "xxlarge" %>
+			        <%= f.text_field :username, :class => "large form-control" %>
 			      </div>
 			<p class="help-block">你的名字,会被其他人看到</p>
 			    </div>
@@ -37,7 +37,7 @@
  			    <div class="clearfix">
 			      <%= f.label '你的城市' %>
 			      <div class="input">
-			        <%= f.text_field :city, :class => "xxlarge" %>
+			        <%= f.text_field :city, :class => "large form-control" %>
 			      </div>
 				<p class="help-block">请用中文填写所在城市</p>
 			    </div>
@@ -47,7 +47,7 @@
 			    <div class="clearfix">
 			      <%= f.label '一句话签名' %>
 			      <div class="input">
-			        <%= f.text_field :tagline, :class => "xxlarge" %>
+			        <%= f.text_field :tagline, :class => "xxlarge form-control" %>
 			      </div>
 				<p class="help-block">一句话签名,彰显个性格调用的.</p>
 			
@@ -66,74 +66,95 @@
 		    </div>
 		
 		    <div class="clearfix">
-		      <%= f.label "我的形象（照片地址）" %>
-		      <div class="input">
-		        <%= f.text_field :image, :class => "xxlarge" %>
+		      <%= f.label "我的显示图片, 请输入Link" %>
+		      <div class="">
+		        <%= f.text_field :image, :class => "xxlarge form-control" %>
 		      </div>
+				<p class="help-block">图片URL</p>
+		
 		    </div>
+		
+ 
 			
 		    <div class="clearfix">
 		      <%= f.label "个人介绍" %>
 		      <div class="input">
-			 	<%= f.text_area :bio, :rows => "5",:class => "xxlarge" %>
+			 	<%= f.text_area :bio, :rows => "5",:class => "xxlarge form-control" %>
 		      </div>
+				<p class="help-block">请输入你的个人介绍</p>
 		    </div>
 		
 		    <div class="clearfix">
 		      <%= f.label "我的个人标签(比如：工程师 画家 小清新)" %>
 		      <div class="input">
-		        <%= f.text_field :tag_list, :class => "xxlarge" %>
+		        <%= f.text_field :tag_list, :class => "xxlarge form-control" %>
 		      </div>
+			<p class="help-block">我的个人标签</p>
+		
 		    </div>
 		
 			
 		    <div class="clearfix">
-		      <%= f.label "合适的聊天话题" %>
+		      <%= f.label "喜欢的聊天话题" %>
 		      <div class="input">
-			    <%= f.text_field :topic_list, :class => "xxlarge" %>		    
+			    <%= f.text_field :topic_list, :class => "xxlarge form-control" %>		    
 		      </div>
+			<p class="help-block">喜欢的聊天话题</p>
+		
 		    </div>
 		
 		    <div class="clearfix">
 		      <%= f.label "合适的聊天地点" %>
 		      <div class="input">
-				<%= f.text_field :location_list, :class => "xxlarge" %>
+				<%= f.text_field :location_list, :class => "xxlarge form-control" %>
 		      </div>
+			<p class="help-block">合适的聊天地点</p>
+		
 		    </div>
 		
 		    <div class="clearfix">
 		      <%= f.label "合适的聊天时间" %>
 		      <div class="input">
-				<%= f.text_field :date_list, :class => "xxlarge" %>
+				<%= f.text_field :date_list, :class => "xxlarge form-control" %>
 		      </div>
+			<p class="help-block">合适的聊天时间</p>
+		
 		    </div>
 		
 		    <div class="clearfix">
 		      <%= f.label "个人博客" %>
 		      <div class="input">
-				<%= f.text_field :website, :class => "xxlarge" %>
+				<%= f.text_field :website, :class => "xxlarge form-control" %>
 		      </div>
+			<p class="help-block">个人博客</p>
+		
 		    </div>
 		
 		    <div class="clearfix">
-		      <%= f.label "知复主页" %>
+		      <%= f.label "知乎主页" %>
 		      <div class="input">
-				<%= f.text_field :zhihu, :class => "xxlarge" %>
+				<%= f.text_field :zhihu, :class => "xxlarge form-control" %>
 		      </div>
+			<p class="help-block">你的知乎主页么，如http://www.zhihu.com/people/zoelee</p>
+		
 		    </div>
 		
 		    <div class="clearfix">
 		      <%= f.label "微博地址" %>
 		      <div class="input">
-				<%= f.text_field :weibo, :class => "xxlarge" %>
+				<%= f.text_field :weibo, :class => "xxlarge form-control" %>
 		      </div>
+			<p class="help-block">你的微博地址，如http://www.weibi.com/zoelee</p>
+		
 		    </div>
 		
 		    <div class="clearfix">
 		      <%= f.label "豆瓣主页" %>
 		      <div class="input">
-				<%= f.text_field :douban, :class => "xxlarge" %>
+				<%= f.text_field :douban, :class => "xxlarge form-control" %>
 		      </div>
+			<p class="help-block">你的豆瓣主页地址，如http://www.douban.com/people/zoelee</p>
+		
 		    </div>
 			
  

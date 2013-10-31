@@ -10,10 +10,11 @@
 
 
 	    <div class="clearfix">
-	      <%= f.label :title %>
+	      <%= f.label "故事标题" %>
 	      <div class="input">
-	        <%= f.text_field :title, :class => "xxlarge" %>
+	        <%= f.text_field :title, :class => "xxlarge form-control" %>
 	      </div>
+			<p class="help-block">简明而要的描述你的故事</p>
 	    </div>
 
  
@@ -22,24 +23,25 @@
 		<div class="clearfix">
 	      <%= f.label "故事内容" %>
 	      <div class="input">
-		 	<%= f.text_area :body, :rows => "10",:class => "xxlarge" %>
+		 	<%= f.text_area :body, :rows => "10",:class => "xxlarge form-control" %>
 	      </div>
+		  <p class="help-block">支持Markdown格式</p>
 	    </div>
 
 
 	    <div class="clearfix">
-	      <%= f.label :tag_list %>
+	      <%= f.label "故事标签" %>
 	      <div class="input">
-	        <%= f.text_field :tag_list, :class => "xxlarge" %>
-			<br />
-			故事关键词(多个标签可用逗号[, ，]分割)
+	        <%= f.text_field :tag_list, :class => "xxlarge form-control" %>
 	      </div>
+		  <p class="help-block">多个标签可用空格[ ]分割</p>
+	
 	    </div>
 
 
 
 	    <div class="actions">
-	      <%= f.submit "保存", :class => "btn primary", :disable_with => "保存ing.." %>
+	      <%= f.submit "保存", :class => "btn btn-primary", :disable_with => "保存ing.." %>
 	    </div>
 	<% end %> 
 

@@ -38,12 +38,7 @@ class Blog
     self.update_attribute(:view_count,self.view_count + 1) 
   end
   
-  before_save :split_tags
-  def split_tags
-    if !self.tag_list.blank? and self.tags.blank?
-      self.tags = self.tag_list.split(/,|，/).collect { |tag| tag.strip }.uniq
-    end
-  end
+
   
   before_save :markdown_for_body_html
     def markdown_for_body_html

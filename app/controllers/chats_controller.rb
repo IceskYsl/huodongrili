@@ -1,6 +1,6 @@
 # coding: utf-8
 class ChatsController < ApplicationController
-  before_filter :require_account,:only=>[:create,:confirm]
+  before_filter :require_account,:only=>[:create,:confirm,:update]
   
   def index
     page = params[:page] || 1
@@ -24,12 +24,14 @@ class ChatsController < ApplicationController
   #确认
   def confirm
     @chat = Chat.find(params[:id])  
-    if request.post?
-      @chat.state = 1
-      @chat.save
-      @chat.send_confirm_mail
-    end
-
+  end
+  
+  def update
+    @chat = Chat.find(params[:id])  
+    @chat.state = 1
+    @chat.save
+    @chat.send_confirm_mail
+    redirect_to(root_path, :notice => '聊天申请已经确认，记得准时赴约.')
   end
   
 end

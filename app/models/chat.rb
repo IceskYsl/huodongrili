@@ -25,6 +25,7 @@ class Chat
 
   
   belongs_to :account
+  belongs_to :user, :class_name => "Account", :foreign_key => "user_id"
   
   # 注册邮件提醒
   after_create :send_apply_mail

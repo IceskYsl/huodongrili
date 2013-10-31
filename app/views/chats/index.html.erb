@@ -14,7 +14,7 @@
 							<%=image_tag i.image,:size=>"280x220",:alt=>"#{i.username}" unless i.image.blank?%>
 						</p>
 						<p>
-							<font color="red"> <%=i.tag_list%></font> 
+							<font color="blue"> <%=i.city if i.city%> <%=i.tag_list%></font> 
 						</p>
 						<p>
 							<%=simple_format i.bio%>

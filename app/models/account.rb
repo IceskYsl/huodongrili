@@ -75,36 +75,22 @@ class Account
     authorizations.create(:provider => provider , :uid => uid )
   end
   
-  before_save :split_tags
-  def split_tags
-    if !self.location_list.blank? and self.locations.blank?
-      self.locations = self.location_list.split(/,|，/).collect { |tag| tag.strip }.uniq
-    end
-    if !self.date_list.blank? and self.dates.blank?
-      self.dates = self.date_list.split(/,|，/).collect { |tag| tag.strip }.uniq
-    end
-    if !self.topic_list.blank? and self.topics.blank?
-      self.topics = self.topic_list.split(/,|，/).collect { |tag| tag.strip }.uniq
-    end
-    if !self.tag_list.blank? #and self.tags.blank?
-      self.tags = self.tag_list.split(/,|，/).collect { |tag| tag.strip }.uniq
-    end
-  end
+
   
   def tag_list
-    self.tags.join(",") if self.tags
+    self.tags.join(" ") if self.tags
   end
   
   def topic_list
-    self.topics.join(",") if self.topics
+    self.topics.join("") if self.topics
   end
   
   def date_list
-    self.dates.join(",") if self.dates
+    self.dates.join(" ") if self.dates
   end
   
   def location_list
-    self.locations.join(",") if self.locations
+    self.locations.join(" ") if self.locations
   end
   
   #role

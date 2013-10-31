@@ -47,7 +47,8 @@ Huodong::Application.routes.draw do
       get :apply
       get :confirm
       post :confirm
-    end    
+    end   
+     
   end
   
   resources :abouts do

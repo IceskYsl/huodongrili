@@ -12,7 +12,7 @@
 		</div>
 		
 		<div class="profile_info pull-left" >
-			<h3><%=@account.nickname%></h3>
+			<h3><%=@account.username%></h3>
 			<p><%=@account.tagline%></p>
 			<p>
 				<%=link_to image_tag("weibo.png",:size=>"16x16",:alt=>"免费聊天"),@account.weibo,:target=>"_blank" unless @account.weibo.blank? %>
@@ -70,12 +70,21 @@
 	<%end%>
 
 	</div>	
-	<%= render :partial => '/chats/item'%>
- 
+	
+	<%unless session[:account_id] && session[:account_id].to_i == @account.id  %>
+ 	 <%= render :partial => '/chats/item'%>
 	<p>
 		ps.<br />
 		请仔细填写，才可以大大提高约成功的概率~
 	</p>
+	<%else%>
+	<p>
+		ps.<br />
+		自己就不要约自己啦~
+	</p>
+	<%end%>
+
+
 
 
 </div>

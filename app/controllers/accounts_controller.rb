@@ -29,10 +29,15 @@ class AccountsController < ApplicationController
   end
   
   def update
-    @account = current_account #Account.unscoped.find(session[:account_id])
+    @account = Account.unscoped.find(session[:account_id])
     params.permit!
     if @account.update_attributes(params[:account])
+      @account.tags = params[:account][:tag_list].split(/ /).collect { |tag| tag.strip }.uniq if params[:account][:tag_list]
+      @account.dates = params[:account][:date_list].split(/ /).collect { |tag| tag.strip }.uniq if params[:account][:date_list]
+      @account.locations = params[:account][:location_list].split(/ /).collect { |tag| tag.strip }.uniq if params[:account][:location_list]
+      @account.topics = params[:account][:topic_list].split(/ /).collect { |tag| tag.strip }.uniq if params[:account][:topic_list]
       @account.state = 1
+      @account.save
       redirect_to(root_path, :notice => '资料编辑成功～')
     else
       redirect_to(root_path, :notice => '资料编辑失败～')
