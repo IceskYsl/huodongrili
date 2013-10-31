@@ -17,12 +17,12 @@
 						<%=link_to(raw(image_tag "index.png",:size=>"16x16",:alt=>"首页") + "首页", root_path )%>
 					  </li>
 
- 					  <li class="<%=nav_chats is_current('chats',controller.controller_name)%>">						
+ 					  <li class="nav_chats <%=is_current('chats',controller.controller_name)%>">						
 						<%=link_to(raw(image_tag "chat.png",:size=>"16x16",:alt=>"约聊天") + " 约聊天", chats_path )%>
 					  </li>
-					  <li class="<%=nav_blogs is_current('blogs',controller.controller_name)%>">
+					  <li class="nav_blogs <%= is_current('blogs',controller.controller_name)%>">
 						<%=link_to(raw(image_tag "blog.png",:size=>"16x16",:alt=>"故事集")+" 故事集", blogs_path )%></li>
-					  <li class="<%=nav_about is_current('about',controller.controller_name)%>">
+					  <li class="nav_about <%= is_current('about',controller.controller_name)%>">
 						<%=link_to(raw(image_tag "d.png",:size=>"16x16",:alt=>"客户端")+" 客户端", client_abouts_path )%></li>
                     </ul>
 
