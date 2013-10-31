@@ -18,7 +18,7 @@ class AccountsController < ApplicationController
  
   
   def ping
-    # Account.create(:email => "iceskysl@gmail.com",:username=>"YaoShanglang",:avatar => "https://lh6.googleusercontent.com/-YE_1r6r72Yg/AAAAAAAAAAI/AAAAAAAAL4M/jrDWisl3W7w/photo.jpg")
+    # Account.create(:email => "v@gmail.com",:username=>"V",:avatar => "https://lh6.googleusercontent.com/-YE_1r6r72Yg/AAAAAAAAAAI/AAAAAAAAL4M/jrDWisl3W7w/photo.jpg")
     @account = Account.find(3)
     set_session
     redirect_to(root_path, :notice => "登录测试帐号成功。")        

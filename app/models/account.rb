@@ -31,6 +31,7 @@ class Account
   # 聊天者
   field :is_chat, :type => Integer, :default => 0
   field :nickname
+  field :city
   field :image
   field :locations, :type => Array, :default => [] #设置自己合适的地点（选地图标注，地图比较方便大家查看）
   field :dates, :type => Array, :default => [] #设置自己可行的时间（是个List）
@@ -40,6 +41,7 @@ class Account
   
 
   #社交帐号
+  field :website
   field :zhihu
   field :weibo
   field :douban

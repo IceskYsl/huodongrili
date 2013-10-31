@@ -3,7 +3,7 @@
 	<div class="span12 well">
 		<div id="home">
 			<h2>我的设置..</h2>
-		    <p>完善聊天资料，方便其他人约哟...</p>
+		    <p>完善资料，能方便大家了解 :)</p>
 			<hr />
 		 	<%= form_for @account  do |f| %>
 		    <%= render "shared/error_messages", :target => @account %>
@@ -12,29 +12,46 @@
 				<legend>个人资料</legend>
 		
 		    <div class="clearfix">
-		      <%= f.label :avatar %>
 		      <div class="avatar">
 				<%=image_tag @current_account.avatar%>
 		      </div>
 		    </div>	
+		
+		<br />
+		    <div class="clearfix">
+		      <%= f.label :email %>
+		      <div class="input">
+		        <%= f.text_field :email, :class => "xxlarge",:readonly=>true,:disabled=>"disabled" %>
+		      </div>
+				<p class="help-block">不可以修改哟</p>
+  	
+		    </div>
+		
  			    <div class="clearfix">
 			      <%= f.label :username %>
 			      <div class="input">
 			        <%= f.text_field :username, :class => "xxlarge" %>
 			      </div>
+			<p class="help-block">你的名字,会被其他人看到</p>
+			    </div>
+			
+ 			    <div class="clearfix">
+			      <%= f.label :city %>
+			      <div class="input">
+			        <%= f.text_field :city, :class => "xxlarge" %>
+			      </div>
+				<p class="help-block">请用中文填写所在城市</p>
 			    </div>
 
-			    <div class="clearfix">
-			      <%= f.label :email %>
-			      <div class="input">
-			        <%= f.text_field :email, :class => "xxlarge" %>
-			      </div>
-			    </div>
+
+			
 			    <div class="clearfix">
 			      <%= f.label :tagline %>
 			      <div class="input">
 			        <%= f.text_field :tagline, :class => "xxlarge" %>
 			      </div>
+				<p class="help-block">一句话签名,彰显个性格调用的.</p>
+			
 			    </div>
  			</fieldset>				
 		
@@ -49,12 +66,7 @@
  	<br />	
 			<fieldset id="chat" style="display:none">
 			<legend>聊天设置</legend>
-		    <div class="clearfix">
-		      <%= f.label "我的昵称" %>
-		      <div class="input">
-		        <%= f.text_field :nickname, :class => "xxlarge" %>
-		      </div>
-		    </div>
+
 			
 		    <div class="clearfix">
 		      <%= f.label "我的形象（照片地址）" %>
@@ -99,7 +111,7 @@
 		      </div>
 		    </div>
 			
-            <%["zhihu","weibo","douban"].each do |s|%>
+            <%["website","zhihu","weibo","douban"].each do |s|%>
 		    <div class="clearfix">
 		      <%= f.label s %>
 		      <div class="input">
