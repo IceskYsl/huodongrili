@@ -10,8 +10,8 @@
  *
  *= require twitter/bootstrap
  *= require_tree ./sprites/
- *= require_self
  *= require_tree .
+ *= require_self
  */
 
 hr{
@@ -120,9 +120,7 @@ margin: 0;
 	margin-top: 20px;
 }
 
-.chat a{
-
-}
+ 
 
 .chat p a, a:active, .chat a:hover {
   outline: 0; 
@@ -152,7 +150,7 @@ margin: 0;
 }
 
 img {
-	max-width: 100%;
+	max-width: 90%;
 	width: auto\9;
 	height: auto;
 	vertical-align: middle;
@@ -160,12 +158,12 @@ img {
 	-ms-interpolation-mode: bicubic;
 }
 
-.nav_index a{
+.nav_index {
 	color: #0099cc;
 }
-.nav_chats a{
+.nav_chats {
 	color: #00cccc;
 }
-.nav_blogs a{
+.nav_blogs {
 	color: #669900;
 }
