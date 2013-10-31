@@ -14,12 +14,19 @@
 							<%=image_tag i.image,:size=>"280x220",:alt=>"#{i.username}" unless i.image.blank?%>
 						</p>
 						<p>
-							<font color="blue"> <%=i.city if i.city%> <%=i.tag_list%></font> 
-						</p>
+							<%if i.city%>
+ 							 <button type="button" class="btn btn-info btn-xs"><%=i.city%></button>
+							<%end%>
+							<%i.tags.each do |tag|%>
+							 <button type="button" class="btn btn-primary btn-xs"><%=tag%></button>
+							<%end%>
+
+						  
+ 							</p>
 						<p>
 							<%=simple_format i.bio%>
 						</p>
-						<p class="pull-right">
+						<p class="pull-left">
 							<%=link_to image_tag("weibo.png",:size=>"16x16",:alt=>"免费聊天"),i.weibo,:target=>"_blank" unless i.weibo.blank? %>
 							<%=link_to image_tag("zhihu.png",:size=>"16x16",:alt=>"免费聊天"),i.zhihu,:target=>"_blank" unless i.zhihu.blank? %>
 							<%=link_to image_tag("douban.png",:size=>"16x16",:alt=>"免费聊天"),i.douban,:target=>"_blank" unless i.douban.blank?%>							
