@@ -60,6 +60,7 @@ class Account
   attr_accessor :location_list,:date_list,:topic_list,:tag_list
   scope :normal, where(:state.gt => STATE[:init])
   scope :can_chat, where(:is_chat.gt => STATE[:init])
+  scope :hot, desc('seq')  
   
   
   
