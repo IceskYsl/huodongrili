@@ -6,7 +6,7 @@
 			 <div class="container chats">
 			<div class="row-fluid">
  				<%@items.each do |i|%>
-				<a href="/accounts/<%=i.id%>">
+				<a href="/u/<%=i.u_login%>">
 				<div class="item span3 chat">
 					<h3><%=i.username%></h3>
 					<div class="pe-wp-default">

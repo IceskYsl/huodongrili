@@ -66,6 +66,9 @@ class Account
     "http://www.huodongrili.com/u/#{self.login || self.id}"
   end
   
+  def u_login
+    self.login || self.id
+  end
   
   def self.find_by_login(login)
     if login.is_a?(String)

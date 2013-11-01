@@ -11,9 +11,12 @@ class AccountsController < ApplicationController
   
   def u
     @account  =  Account.find_by_login(params[:login])
-    redirect_to(account_path(:id => params[:login]))    unless @account.blank?     
-    @chat = Chat.new
-    render :action => "show"
+    if  @account.blank?  
+      redirect_to(account_path(:id => params[:login]))     
+    else
+      @chat = Chat.new
+      render :action => "show"      
+    end
   end
   
  

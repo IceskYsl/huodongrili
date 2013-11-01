@@ -20,7 +20,7 @@ class Account
       else
         account = Account.new do |account|
           account.email = data["email"].present?  ?  data["email"] : "#{provider}+#{uid}@tagskill.com"
-          account.login = data["email"]
+          account.login = data["email"].split('@').first if data["email"]
           account.username = data['name']
           account.avatar = data["image"]
         end
