@@ -75,7 +75,17 @@ class Account
     authorizations.create(:provider => provider , :uid => uid )
   end
   
-
+  def zhihu_url
+    "http://www.zhihu.com/people/" + self.zhihu
+  end
+  
+  def douban_url
+    "http://www.douban.com/people" + self.douban
+  end
+  
+  def weibo_url
+    "http://www.weibi.com/" + self.weibo
+  end
   
   def tag_list
     self.tags.join(" ") if self.tags

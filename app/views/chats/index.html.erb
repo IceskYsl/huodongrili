@@ -27,9 +27,9 @@
 							<%=simple_format i.bio%>
 						</p>
 						<p class="pull-left">
-							<%=link_to image_tag("weibo.png",:size=>"16x16",:alt=>"免费聊天"),i.weibo,:target=>"_blank" unless i.weibo.blank? %>
-							<%=link_to image_tag("zhihu.png",:size=>"16x16",:alt=>"免费聊天"),i.zhihu,:target=>"_blank" unless i.zhihu.blank? %>
-							<%=link_to image_tag("douban.png",:size=>"16x16",:alt=>"免费聊天"),i.douban,:target=>"_blank" unless i.douban.blank?%>							
+							<%=link_to image_tag("weibo.png",:size=>"16x16",:alt=>"免费聊天"),i.weibo_url,:target=>"_blank" unless i.weibo.blank? %>
+							<%=link_to image_tag("zhihu.png",:size=>"16x16",:alt=>"免费聊天"),i.zhihu_url,:target=>"_blank" unless i.zhihu.blank? %>
+							<%=link_to image_tag("douban.png",:size=>"16x16",:alt=>"免费聊天"),i.douban_url,:target=>"_blank" unless i.douban.blank?%>							
 							
 						</p>
 					</div>

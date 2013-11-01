@@ -13,21 +13,18 @@
 		
 		<div class="profile_info pull-left" >
 			<h3><%=@account.username%></h3>
-			<p><%=@account.tagline%></p>
+			<p><%=@account.tag_list%></p>
 			<p>
-				<%=link_to image_tag("weibo.png",:size=>"16x16",:alt=>"免费聊天"),@account.weibo,:target=>"_blank" unless @account.weibo.blank? %>
-				<%=link_to image_tag("zhihu.png",:size=>"16x16",:alt=>"免费聊天"),@account.zhihu,:target=>"_blank" unless @account.zhihu.blank? %>
-				<%=link_to image_tag("douban.png",:size=>"16x16",:alt=>"免费聊天"),@account.douban,:target=>"_blank" unless @account.douban.blank?%>
+				<%=link_to image_tag("weibo.png",:size=>"16x16",:alt=>"免费聊天"),@account.weibo_url,:target=>"_blank" unless @account.weibo.blank? %>
+				<%=link_to image_tag("zhihu.png",:size=>"16x16",:alt=>"免费聊天"),@account.zhihu_url,:target=>"_blank" unless @account.zhihu.blank? %>
+				<%=link_to image_tag("douban.png",:size=>"16x16",:alt=>"免费聊天"),@account.douban_url,:target=>"_blank" unless @account.douban.blank?%>
 			</p>
 		</div>
 	</div>
 	
 
 	<div class="profile-items item apply_form">
-	<h3>我的标签</h3>
-	<div class="box">
-		<%=@account.tag_list%>
-	</div>
+
 	
 	<h3>自我介绍</h3>
 	<div class="box">
