@@ -82,7 +82,7 @@ class Account
   end
   
   def topic_list
-    self.topics.join("") if self.topics
+    self.topics.join(" ") if self.topics
   end
   
   def date_list

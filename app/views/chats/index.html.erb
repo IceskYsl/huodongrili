@@ -14,7 +14,7 @@
 							<%=image_tag i.image,:size=>"280x220",:alt=>"#{i.username}" unless i.image.blank?%>
 						</p>
 						<p>
-							<%if i.city%>
+							<%unless i.city.blank?%>
  							 <button type="button" class="btn btn-info btn-xs"><%=i.city%></button>
 							<%end%>
 							<%i.tags.each do |tag|%>
