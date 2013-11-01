@@ -3,7 +3,7 @@
 <%= form_for @chat  do |f| %>
 <div class="clearfix">
   <%= f.label :when %>
-  <div class="input">
+  <div class="input-append bootstrap-timepicker">
     <%= f.text_field :date, :class => "large form-control","data-behaviour"=>'datepicker' %>
     <%= f.text_field :when, :class => "large form-control",:id=>"chat_when" %>
 	<span class="add-on"><i class="icon-time"></i></span>
@@ -11,7 +11,7 @@
 </div>
 
 <script type="text/javascript">
-       $('#chat_when').timepicker();
+	$('#chat_when').timepicker();
 </script>
 
 <div class="clearfix">
