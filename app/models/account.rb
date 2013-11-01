@@ -84,7 +84,7 @@ class Account
   end
   
   def weibo_url
-    "http://www.weibi.com/" + self.weibo
+    "http://www.weibo.com/" + self.weibo
   end
   
   def tag_list

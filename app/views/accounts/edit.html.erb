@@ -42,16 +42,16 @@
 				<p class="help-block">请用中文填写所在城市</p>
 			    </div>
 
-
-			
 			    <div class="clearfix">
-			      <%= f.label '一句话签名' %>
+			      <%= f.label "我的个人标签(比如：工程师 画家 小清新)" %>
 			      <div class="input">
-			        <%= f.text_field :tagline, :class => "xxlarge form-control" %>
+			        <%= f.text_field :tag_list, :class => "xxlarge form-control" %>
 			      </div>
-				<p class="help-block">一句话签名,彰显个性格调用的.</p>
-			
+				<p class="help-block">我的个人标签</p>
+
 			    </div>
+			
+ 
  			</fieldset>				
 		
 		<br />	
@@ -86,14 +86,7 @@
 				<p class="help-block">请输入你的个人介绍</p>
 		    </div>
 		
-		    <div class="clearfix">
-		      <%= f.label "我的个人标签(比如：工程师 画家 小清新)" %>
-		      <div class="input">
-		        <%= f.text_field :tag_list, :class => "xxlarge form-control" %>
-		      </div>
-			<p class="help-block">我的个人标签</p>
-		
-		    </div>
+
 		
 			
 		    <div class="clearfix">
