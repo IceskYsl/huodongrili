@@ -30,7 +30,7 @@ class BlogsController < ApplicationController
   def create
     params.permit!
     @blog = Blog.new(params[:blog])
-    @blog.tags = params[:blog][:tag_list].split(/ /).collect { |tag| tag.strip }.uniq if params[:blog][:tag_list]
+    @blog.tags = params[:blog][:tag_list].split(/\s+/).collect { |tag| tag.strip }.uniq if params[:blog][:tag_list]
     @blog.account_id =  session[:account_id]
     if @blog.save
       redirect_to(blogs_path, :notice => '故事添加成功,谢谢.')

@@ -132,33 +132,32 @@
 		
 		    </div>
 		
+	 
+		
 		    <div class="clearfix">
 		      <%= f.label "知乎主页" %>
-		      <div class="input">
-				<%= f.text_field :zhihu, :class => "xxlarge form-control" %>
+		      <div class="input-group xlarge">
+				<span class="input-group-addon">http://www.zhihu.com/people/</span>
+				<%= f.text_field :zhihu, :class => "xxlarge form-control",:placeholder=>"Username" %>
 		      </div>
-			<p class="help-block">你的知乎主页么，如http://www.zhihu.com/people/zoelee</p>
+		    </div>
 		
+		    <div class="form-group">
+			    <label for="douban">豆瓣主页</label>
+		      <div class="input-group xlarge">
+				<span class="input-group-addon">http://www.douban.com/people</span>
+				<%= f.text_field :douban, :class => "xxlarge form-control",:placeholder=>"Username" %>
+		      </div>
 		    </div>
 		
 		    <div class="clearfix">
 		      <%= f.label "微博地址" %>
-		      <div class="input">
-				<%= f.text_field :weibo, :class => "xxlarge form-control" %>
+		      <div class="input-group xlarge">
+				<span class="input-group-addon">http://www.weibi.com/</span>
+				<%= f.text_field :weibo, :class => "xxlarge form-control",:placeholder=>"Username" %>
 		      </div>
-			<p class="help-block">你的微博地址，如http://www.weibi.com/zoelee</p>
-		
 		    </div>
 		
-		    <div class="clearfix">
-		      <%= f.label "豆瓣主页" %>
-		      <div class="input">
-				<%= f.text_field :douban, :class => "xxlarge form-control" %>
-		      </div>
-			<p class="help-block">你的豆瓣主页地址，如http://www.douban.com/people/zoelee</p>
-		
-		    </div>
-			
  
 			
 			</fieldset>				
