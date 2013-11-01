@@ -18,7 +18,8 @@ class Chat
   field :user_id #摘要
   
   field :location
-  field :when, :type => DateTime
+  field :date
+  field :when
   field :topic #其他设置（喜欢的聊天主题，最近关心的事情等，是文本备注）
   field :body
   field :state, :type => Integer, :default => 0 #STATE
