@@ -20,7 +20,10 @@
 
 <script>
     $(".dropdown-toggle").dropdown();
-	$('[data-behaviour~=datepicker]').datepicker();
+	$('[data-behaviour~=datepicker]').datepicker({
+		    format: "yyyy-mm-dd",
+		    daysOfWeekDisabled: "0"
+		});
 </script>
 
 </body>
