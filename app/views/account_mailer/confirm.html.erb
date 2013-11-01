@@ -1,6 +1,6 @@
 <p>
 	<label><%= @user.username %>, 你好</label><br />
-   	<%=@account.username %> 同意你约见面邀请（邮件地址是：<%=@account.email %>）。<br />
+	<a href="http://www.huodongrili.com/m/<%=@account.u_login%>"><%= @account.username %></a>同意你约见面邀请（邮件地址是：<%=@account.email %>）。<br />
 	你们可以邮件约见面详情。<br /><br />
 	
 	可以再读一次首页指南。<br />
@@ -12,7 +12,7 @@
 	
 	<br />
 	——--如下是聊天备忘信息-----<br />
-	聊天时间：   <%=@chat.date%> <%=@chat.when%><br />
+	聊天时间：   <%=@chat.date%> <%=@chat.when%>(聊1小时) <br />
 	聊天地点：   <%=@chat.location%><br />
 	聊天内容：   <%=@chat.topic%>   <br />
 	其他备注：   <br />
