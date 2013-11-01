@@ -22,7 +22,11 @@
     $(".dropdown-toggle").dropdown();
 	$('[data-behaviour~=datepicker]').datepicker({
 		    format: "yyyy-mm-dd",
-		    daysOfWeekDisabled: "0"
+		    weekStart: 1,
+		    todayBtn: "linked",
+		    daysOfWeekDisabled: "0,6",
+		    autoclose: true,
+		    todayHighlight: true
 		});
 </script>
 
