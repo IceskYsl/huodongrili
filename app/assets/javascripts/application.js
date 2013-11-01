@@ -16,4 +16,7 @@
 //= require twitter/bootstrap
 //= require bootstrap-datepicker
 //= require bootstrap-timepicker
+//= require markdown.converter
+//= require markdown.sanitizer
+//= require markdown.editor
 //= require_tree .

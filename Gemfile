@@ -37,6 +37,7 @@ gem 'grape-entity'
 
 #tags
 # gem 'mongoid_taggable_on'
+gem 'pagedown-rails', '~> 1.1.3'
 
 #tools
 gem 'exception_notification'
