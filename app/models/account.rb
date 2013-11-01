@@ -62,8 +62,18 @@ class Account
   scope :can_chat, where(:is_chat.gt => STATE[:init])
   scope :hot, desc('seq')  
   
+  def my_link
+    "http://www.huodongrili.com/u/#{self.login || self.id}"
+  end
   
   
+  def self.find_by_login(login)
+    if login.is_a?(String)
+      where(:login => login).first
+    else
+      nil
+    end
+  end
   
   def self.chat_collection
       IS_CHAT.collect { |s| [s[0], s[1]]}

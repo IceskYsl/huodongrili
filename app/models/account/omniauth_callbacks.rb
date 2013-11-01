@@ -22,7 +22,6 @@ class Account
           account.email = data["email"].present?  ?  data["email"] : "#{provider}+#{uid}@tagskill.com"
           account.login = data["email"]
           account.username = data['name']
-          account.nickname = data['name']
           account.avatar = data["image"]
         end
         if account.save(:validate => false)

@@ -1,21 +1,26 @@
 # coding: utf-8
 class AccountsController < ApplicationController
-  before_filter :require_account,:only=>[:profile,:edit]
+  before_filter :require_account,:only=>[:edit,:update]
 
   #聊天人列表
   def index
   end
   
   #得到自己独一无二link  www.huodongrili.com/u/username
-  def show
-    @account = Account.find(params[:id])
-    @chat = Chat.new
-  end
+
   
-  def profile
+  def u
+    @account  =  Account.find_by_login(params[:login])
+    redirect_to(account_path(:id => params[:login]))    unless @account.blank?     
+    @chat = Chat.new
+    render :action => "show"
   end
   
  
+  def show
+    @account = Account.find(params[:id]) 
+    @chat = Chat.new
+  end
   
   def ping
     # Account.create(:email => "v@gmail.com",:username=>"V",:avatar => "https://lh6.googleusercontent.com/-YE_1r6r72Yg/AAAAAAAAAAI/AAAAAAAAL4M/jrDWisl3W7w/photo.jpg")

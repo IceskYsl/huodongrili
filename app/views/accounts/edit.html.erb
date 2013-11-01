@@ -25,13 +25,14 @@
 				<p class="help-block"></p>
   	
 		    </div>
-		
+
+ 
  			    <div class="clearfix">
 			      <%= f.label "您的昵称" %>
 			      <div class="input">
 			        <%= f.text_field :username, :class => "large form-control" %>
 			      </div>
-			<p class="help-block">你的名字,会被其他人看到</p>
+				<p class="help-block">你的名字,会被其他人看到</p>
 			    </div>
 			
  			    <div class="clearfix">
@@ -47,10 +48,18 @@
 			      <div class="input">
 			        <%= f.text_field :tag_list, :class => "xxlarge form-control" %>
 			      </div>
-				<p class="help-block">我的个人标签</p>
+				<p class="help-block"></p>
 
 			    </div>
 			
+			
+		    <div class="clearfix">
+		      <%= f.label "我的link" %>
+		      <div class="input-group xlarge">
+				<span class="input-group-addon">http://www.huodongrili.com/u/</span>
+				<%= f.text_field :login, :class => "xxlarge form-control",:placeholder=>"Username" %>
+		      </div>
+		    </div>
  
  			</fieldset>				
 		
