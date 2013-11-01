@@ -16,7 +16,9 @@ class Chat
    
   field :account_id #摘要
   field :user_id #摘要
-  
+
+  field :code #随机
+   
   field :location
   field :date
   field :when
