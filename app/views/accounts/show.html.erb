@@ -25,6 +25,7 @@
 				</div>
 		 
 			<p>
+				<%=link_to image_tag("website.png",:size=>"16x16",:alt=>"我的网站"),@account.website,:target=>"_blank" unless @account.website.blank?%>	
 				<%=link_to image_tag("weibo.png",:size=>"16x16",:alt=>"免费聊天"),@account.weibo_url,:target=>"_blank" unless @account.weibo.blank? %>
 				<%=link_to image_tag("zhihu.png",:size=>"16x16",:alt=>"免费聊天"),@account.zhihu_url,:target=>"_blank" unless @account.zhihu.blank? %>
 				<%=link_to image_tag("douban.png",:size=>"16x16",:alt=>"免费聊天"),@account.douban_url,:target=>"_blank" unless @account.douban.blank?%>
