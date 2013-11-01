@@ -32,6 +32,10 @@ class AccountsController < ApplicationController
     @account = Account.unscoped.find(session[:account_id])
     params.permit!
     if @account.update_attributes(params[:account])
+      @account.weibo = params[:account][:weibo].split("/").last if params[:account][:weibo]
+      @account.zhihu = params[:account][:zhihu].split("/").last if params[:account][:zhihu]
+      @account.douban = params[:account][:douban].split("/").last if params[:account][:douban]
+      
       @account.tags = params[:account][:tag_list].split(/\s+/).collect { |tag| tag.strip }.uniq if params[:account][:tag_list]
       @account.dates = params[:account][:date_list].split(/\s+/).collect { |tag| tag.strip }.uniq if params[:account][:date_list]
       @account.locations = params[:account][:location_list].split(/\s+/).collect { |tag| tag.strip }.uniq if params[:account][:location_list]
