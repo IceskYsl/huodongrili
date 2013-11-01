@@ -13,16 +13,16 @@
 						<p>
 							<%=image_tag i.image,:size=>"280x220",:alt=>"#{i.username}" unless i.image.blank?%>
 						</p>
-						<p>
+						<div class="tags">
+							<p>
 							<%unless i.city.blank?%>
  							 <button type="button" class="btn btn-info btn-xs"><%=i.city%></button>
 							<%end%>
 							<%i.tags.each do |tag|%>
 							 <button type="button" class="btn btn-primary btn-xs"><%=tag%></button>
-							<%end%>
-
-						  
- 							</p>
+							<%end%>		
+							</p>				  
+ 							</div>
 						<p>
 							<%=simple_format i.bio%>
 						</p>
