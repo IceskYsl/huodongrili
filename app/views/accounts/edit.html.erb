@@ -90,7 +90,7 @@
 		    <div class="clearfix">
 		      <%= f.label "个人介绍" %>
 		      <div class="input">
-			 	<%= f.text_area :bio, :rows => "5",:class => "xxlarge form-control" %>
+			 	<%= f.text_area :bio, :rows => "10",:class => "xxlarge form-control" %>
 		      </div>
 				<p class="help-block">请输入你的个人介绍</p>
 		    </div>
@@ -103,7 +103,7 @@
 		      <div class="input">
 			    <%= f.text_field :topic_list, :class => "xxlarge form-control" %>		    
 		      </div>
-			<p class="help-block">喜欢的聊天话题</p>
+			<p class="help-block"></p>
 		
 		    </div>
 		
@@ -112,7 +112,7 @@
 		      <div class="input">
 				<%= f.text_field :location_list, :class => "xxlarge form-control" %>
 		      </div>
-			<p class="help-block">合适的聊天地点</p>
+			<p class="help-block"></p>
 		
 		    </div>
 		
@@ -121,16 +121,16 @@
 		      <div class="input">
 				<%= f.text_field :date_list, :class => "xxlarge form-control" %>
 		      </div>
-			<p class="help-block">合适的聊天时间</p>
+			<p class="help-block"></p>
 		
 		    </div>
 		
 		    <div class="clearfix">
 		      <%= f.label "个人博客" %>
 		      <div class="input">
-				<%= f.text_field :website, :class => "xxlarge form-control" %>
+				<%= f.text_field :website, :class => "xxlarge form-control", :placeholder=>"http://" %>
 		      </div>
-			<p class="help-block">个人博客</p>
+			<p class="help-block"></p>
 		
 		    </div>
 		
