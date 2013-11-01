@@ -5,10 +5,14 @@
   <%= f.label :when %>
   <div class="input">
     <%= f.text_field :date, :class => "large form-control","data-behaviour"=>'datepicker' %>
-    <%= f.text_field :when, :class => "large form-control",:id=>"timepicker" %>
+    <%= f.text_field :when, :class => "large form-control",:id=>"chat_when" %>
+	<span class="add-on"><i class="icon-time"></i></span>
   </div>
 </div>
 
+<script type="text/javascript">
+       $('#chat_when').timepicker();
+</script>
 
 <div class="clearfix">
   <%= f.label "地点" %>
