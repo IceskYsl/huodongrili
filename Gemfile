@@ -17,7 +17,9 @@ gem 'mongoid', '~> 4.0.0', :github => 'mongoid/mongoid'
 # gem 'mongoid_rails_migrations' #, '~> 0.0.14'
 gem 'mongoid_auto_increment_id', "0.6.2"
 
- 
+gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-timepicker-rails'
+
 gem 'markdown-ruby-china',:github => 'IceskYsl/markdown-ruby-china'
 
 gem 'protected_attributes'
