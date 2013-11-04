@@ -13,7 +13,7 @@
                           <strong class="year"><%=@blog.created_at.year%></strong>
                   </small>
           </div>
-          <div class="p-con">    
+          <div class="p-con-full">    
 				<%unless @blog.image.blank?%>
 	            	<p><%=image_tag @blog.image,:alt=>"#{@blog.title}" %></p>
 				<%end%>	
