@@ -28,7 +28,7 @@
 
  
  			    <div class="clearfix">
-			      <%= f.label "您的昵称" %>
+			      <%= f.label "我的昵称" %>
 			      <div class="input">
 			        <%= f.text_field :username, :class => "large form-control" %>
 			      </div>
@@ -36,7 +36,7 @@
 			    </div>
 			
  			    <div class="clearfix">
-			      <%= f.label '你的城市（请用中文填写所在城市）' %>
+			      <%= f.label '我的城市（请用中文填写所在城市）' %>
 			      <div class="input">
 			        <%= f.text_field :city, :class => "large form-control" %>
 			      </div>
@@ -44,7 +44,7 @@
 			    </div>
 
 			    <div class="clearfix">
-			      <%= f.label "我的个人标签(用多个标签请用空格分割，比如：工程师 画家 小清新)" %>
+			      <%= f.label "我的个人标签(多个标签请用空格    分隔)" %>
 			      <div class="input">
 			        <%= f.text_field :tag_list, :class => "xxlarge form-control" %>
 			      </div>
@@ -81,7 +81,7 @@
 		      <div class="">
 		        <%= f.text_field :image, :class => "xxlarge form-control" %>
 		      </div>
-				<p class="help-block">图片URL</p>
+				<p class="help-block"></p>
 		
 		    </div>
 		
@@ -92,14 +92,14 @@
 		      <div class="input">
 			 	<%= f.text_area :bio, :rows => "6",:class => "xxlarge form-control" %>
 		      </div>
-				<p class="help-block">请输入你的个人介绍</p>
+				<p class="help-block"></p>
 		    </div>
 		
 
 		
 			
 		    <div class="clearfix">
-		      <%= f.label "喜欢的聊天话题" %>
+		      <%= f.label "喜欢的聊天话题(多个话题请用空格    分隔)" %>
 		      <div class="input">
 			    <%= f.text_field :topic_list, :class => "xxlarge form-control" %>		    
 		      </div>
@@ -108,7 +108,7 @@
 		    </div>
 		
 		    <div class="clearfix">
-		      <%= f.label "合适的聊天地点" %>
+		      <%= f.label "合适的聊天地点(多个地点请用空格    分隔)" %>
 		      <div class="input">
 				<%= f.text_field :location_list, :class => "xxlarge form-control" %>
 		      </div>
@@ -117,7 +117,7 @@
 		    </div>
 		
 		    <div class="clearfix">
-		      <%= f.label "合适的聊天时间" %>
+		      <%= f.label "合适的聊天时间(多个时间请用空格  分割。)" %>
 		      <div class="input">
 				<%= f.text_field :date_list, :class => "xxlarge form-control" %>
 		      </div>
