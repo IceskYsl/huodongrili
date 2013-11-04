@@ -40,7 +40,7 @@
   </div>
 </div>
 	<br />
-	<%= f.hidden_field :account_id,:value=>"#{params[:id]}", :class => "xlarge" %>
+	<%= f.hidden_field :account_id,:value=>"#{account.id}", :class => "xlarge" %>
     <div class="actions">
       <%= f.submit "发出邀请", :class => "btn btn-primary", :disable_with => "邀请发送ing.." %>
     </div>

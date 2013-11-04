@@ -84,7 +84,7 @@
 	</div>	
 	
 	<%unless session[:account_id] && session[:account_id].to_i == @account.id  %>
- 	 <%= render :partial => '/chats/item'%>
+ 	 <%= render :partial => '/chats/item', :locals => { :account => @account }%>
 	<p>
 		ps.<br />
 		请仔细填写，才可以大大提高约成功的概率~
