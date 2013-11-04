@@ -1,0 +1,33 @@
+<div class="clearfix">
+  <%= f.label "故事标题" %>
+  <div class="input">
+    <%= f.text_field :title, :class => "xxlarge form-control" %>
+  </div>
+	<p class="help-block"></p>
+</div>
+
+<div class="clearfix">
+  <%= f.label "故事内容" %>
+  <div class="input">
+ 	<%= f.text_area :body, :rows => "12",:class => "xxlarge form-control" %>
+  </div>
+	<p class="help-block"></p>
+</div>
+
+<div class="clearfix">
+  <%= f.label "故事配图（请提供配图的地址）" %>
+  <div class="input">
+    <%= f.text_field :image, :class => "xxlarge form-control", :placeholder=>"http://" %>
+  </div>
+	<p class="help-block"></p>
+</div>
+
+
+
+<div class="clearfix">
+  <%= f.label "故事标签(多个标签可用空格 分割)" %>
+  <div class="input">
+    <%= f.text_field :tag_list, :class => "xxlarge form-control" %>
+  </div>
+  <p class="help-block"></p>
+</div>

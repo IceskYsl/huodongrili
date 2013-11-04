@@ -46,6 +46,8 @@ class BlogsController < ApplicationController
   def update
     @blog = Blog.unscoped.find(params[:id])
     if @blog.update_attributes(params[:blog])
+      @blog.tags = params[:blog][:tag_list].split(/\s+/).collect { |tag| tag.strip }.uniq if params[:blog][:tag_list]
+      @blog.save
       redirect_to(blogs_path, :notice => '故事编辑成功～')
     else
       render :action => "edit",:id=>params[:id]

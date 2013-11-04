@@ -4,20 +4,17 @@
 
 	<%= form_for @blog  do |f| %>
 	  <fieldset>
-	    <legend>撰写故事</legend>
+	    <legend>编辑故事</legend>
 	    <%= render "shared/error_messages", :target => @blog %>
 		<%= render "form", :f => f %>
 	    <div class="actions">
-	      <%= f.submit "故事写好了", :class => "btn btn-primary", :id=>"submit-it", :disable_with => "保存ing.." %>
+	      <%= f.submit "故事编辑好了", :class => "btn btn-primary", :id=>"submit-it", :disable_with => "保存ing.." %>
 	    </div>
 	<% end %> 
 	
 	<div class="clearfix"></div>
 
 	</div>
-		
- 
-	
  
  	</div>
 </div>

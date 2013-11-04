@@ -13,6 +13,7 @@ class Blog
    }
    
   field :title #文章标题
+  field :image #文章配图
   field :lede #摘要
   field :body #文章
   field :body_html #文章
@@ -33,6 +34,9 @@ class Blog
   scope :by_account, Proc.new { |t| where(:account_id => t) }
   scope :by_tag, Proc.new { |t| where(:tags => t) }
  
+  def tag_list
+    self.tags.join(" ") if self.tags
+  end
   
   def hits_incr
     self.update_attribute(:view_count,self.view_count + 1) 

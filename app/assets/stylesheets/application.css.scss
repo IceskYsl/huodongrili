@@ -213,3 +213,69 @@ margin-bottom:20px;
 	font-size:14px;
 	color:#CC0000;
 }
+
+
+.p-time {
+	background: url(images/p-time-bkg.png) no-repeat right bottom;
+	position: absolute;
+	left: -47px;
+	top: 3px;
+	width: 50px;
+	padding-bottom: 10px;
+}
+
+.p-time strong {
+float: left;
+text-align: center;
+}
+
+.p-time .day {
+	font: normal 20px/18px "Arial";
+	letter-spacing: -1px;
+	color: #fff;
+	width: 40px;
+	padding: 7px 0px;
+	background: #2abada;
+	overflow: hidden;
+}
+
+.p-time .month {
+background: #dedede;
+width: 40px;
+padding: 3px 0px;
+margin-bottom: 10px;
+}
+
+.p-time .year {
+background: #fff;
+border: solid 1px #dedede;
+font: normal 11px/11px "Verdana";
+padding: 12px 5px;
+color: #bababa;
+}
+
+.p-cat {
+font: normal 11px/14px "Arial";
+color: #999;
+}
+
+.p-head {
+padding-bottom: 2px;
+}
+
+.post, .attachment {
+width: 100%;
+position: relative;
+}
+
+.SL {
+width: 780px;
+float: left;
+padding-left: 45px;
+}
+
+.post{
+margin-bottom: 20px;
+padding-bottom: 20px;
+border-bottom: dotted 1px #dedede;
+}

@@ -1,9 +1,9 @@
  
 <div class="row-fluid">
-	<div class="span12 well">
+	<div class="span12 well container">
 <div class="SL">
 
-  <div class="blog" style="margin-bottom: 40px;">
+  <div class="post" style="margin-bottom: 40px;">
           <div class="p-head">
                   <h2><%=link_to @blog.title,blog_path(@blog)%>  </h2>
                   <p class="p-cat">By: <%= raw @blog.account.try(:username) %> ,   Tag: <%=blog_tags_tag(@blog)%> </p>
@@ -13,9 +13,12 @@
                           <strong class="year"><%=@blog.created_at.year%></strong>
                   </small>
           </div>
-          <div class="p-con">                
+          <div class="p-con">    
+				<%unless @blog.image.blank?%>
+	            	<p><%=image_tag @blog.image,:alt=>"#{@blog.title}" %></p>
+				<%end%>	
                   <%=raw @blog.body_html%>                                
-       </div>
+       		</div>
 
            <div class="p-con-author">        
                   作者： <%= raw @blog.account.try(:username) %>  <br />
