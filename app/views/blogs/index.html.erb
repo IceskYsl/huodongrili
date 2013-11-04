@@ -30,7 +30,7 @@
 						<%unless blog.image.blank?%>
 			            	<p><%=image_tag blog.image,:alt=>"#{blog.title}" %></p>
 						<%end%>           
-                        <%=simple_format blog.body_html%>                                
+                        <%=raw blog.body_html%>                                
 					  </div>
        </div>
        <%end%>

@@ -50,6 +50,7 @@ class AccountsController < ApplicationController
       @account.topics = params[:account][:topic_list].split(/\s+/).collect { |tag| tag.strip }.uniq if params[:account][:topic_list]
       @account.state = 1
       @account.save
+      set_session
       redirect_to(root_path, :notice => '资料编辑成功～')
     else
       redirect_to(root_path, :notice => '资料编辑失败～')
