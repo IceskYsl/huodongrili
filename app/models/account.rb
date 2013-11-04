@@ -92,7 +92,7 @@ class Account
   end
   
   def douban_url
-    "http://www.douban.com/people" + self.douban
+    "http://www.douban.com/people/" + self.douban
   end
   
   def weibo_url
