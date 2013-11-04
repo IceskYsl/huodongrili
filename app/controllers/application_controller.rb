@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
   
   def require_account
-    redirect_to(root_path, :notice => '需要登录才可以进进行操作勒.') unless current_account
+    redirect_to(root_path, :notice => '先登录，再操作~喵喵喵~~ Y^o^Y ~~') unless current_account
   end
   
 end
