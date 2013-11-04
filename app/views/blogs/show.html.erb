@@ -20,10 +20,7 @@
                   <%=raw @blog.body_html%>                                
        		</div>
 
-           <div class="p-con-author">        
-                  作者： <%= raw @blog.account.try(:username) %>  <br />
-                  原文地址： <%=link_to @blog.title,blog_path(@blog)%> 
-          </div>
+
 
  
 </div> 

@@ -199,7 +199,7 @@ a.nav_blogs {
 .ui-timepicker-rtl dl dd { margin: 0 45% 10px 10px; }
 
 .bootstrap-timepicker-widget.dropdown-menu.open{
-margin-left: 260px;
+	margin-left: 260px;
 }
 
 .wmd-preview{
@@ -239,10 +239,10 @@ text-align: center;
 }
 
 .p-time .month {
-background: #dedede;
-width: 40px;
-padding: 3px 0px;
-margin-bottom: 10px;
+	background: #dedede;
+	width: 40px;
+	padding: 3px 0px;
+	margin-bottom: 10px;
 }
 
 .p-time .year {
@@ -278,3 +278,12 @@ margin-bottom: 20px;
 padding-bottom: 20px;
 border-bottom: dotted 1px #dedede;
 }
+
+.p-con{
+min-height:40px;
+max-height:170px;
+overflow:hidden;
+word-wrap: break-word;
+
+}
+

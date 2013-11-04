@@ -19,18 +19,18 @@
 							  <%if (blog.account_id && blog.account_id == session[:account_id]) %>
 							  	<div class="pull-right"><%=link_to "编辑",edit_blog_path(blog.id)%></div>
 							  <%end%>
-                              <p class="p-cat">By: <%= raw blog.account.try(:username) %> Tag:<%=blog_tags_tag(blog)%> </p>
+                              <p class="p-cat">
+								By: <%= raw blog.account.try(:username) %> 
+								Tag:<%=blog_tags_tag(blog)%> 
+							  </p>
                               <small class="p-time">
                                       <strong class="day"><%=blog.created_at.day%></strong>
                                       <strong class="month"><%=blog.created_at.strftime("%b")%></strong>
                                       <strong class="year"><%=blog.created_at.year%></strong>
                               </small>
                       </div>
-                      <div class="p-con">     
-						<%unless blog.image.blank?%>
-			            	<p><%=image_tag blog.image,:alt=>"#{blog.title}" %></p>
-						<%end%>           
-                        <%=raw blog.body_html%>                                
+                      <div class="p-con">            
+                        <%=raw blog.body_html%>   
 					  </div>
        </div>
        <%end%>
