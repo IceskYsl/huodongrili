@@ -1,5 +1,10 @@
-<div class="item apply_form">	
+<div class="item apply_form">
+		
 <h3>约聊天申请</h3>
+<%if session[:account_id].blank?%>
+<p class="login_tips">登录才能邀请喵~   右上角登录喵^ ^ </p>
+<%end%>
+
 <%= form_for @chat  do |f| %>
 <div class="clearfix">
   <%= f.label "聊天时间" %>
