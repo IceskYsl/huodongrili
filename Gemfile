@@ -39,6 +39,8 @@ gem 'grape-entity'
 # gem 'mongoid_taggable_on'
 gem 'pagedown-rails', '~> 1.1.3'
 
+
+
 #tools
 gem 'exception_notification'
 
@@ -84,3 +86,7 @@ gem 'unicorn'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development, :test do
+  gem 'quiet_assets'
+end

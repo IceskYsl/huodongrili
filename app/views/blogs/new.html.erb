@@ -17,17 +17,14 @@
 			<p class="help-block"></p>
 	    </div>
 
- 
-
-		<div class="clearfix wmd-panel">
+ 	    <div class="clearfix">
 	      <%= f.label "故事内容" %>
-	  	  <div id='wmd-button-bar'></div>
-		  <textarea class='wmd-input xxlarge' "rows" = "15" id="blog_body" name="blog[body]"><%=@blog.body%></textarea>
-		  <p class="help-block"></p>
+	      <div class="input">
+		 	<%= f.text_area :body, :rows => "10",:class => "xxlarge form-control" %>
+	      </div>
+			<p class="help-block"></p>
 	    </div>
-	
-		
-		<div id="wmd-preview" class="wmd-panel wmd-preview">预览</div>
+ 
 
 
 	    <div class="clearfix">
@@ -56,19 +53,3 @@
  	</div>
 </div>
 
-<script>
-  (function () {
-    var converter = Markdown.getSanitizingConverter();
-    var editor = new Markdown.Editor(converter);
-    editor.run();
-
-    window.onbeforeunload = function(){
-      return '你正在编辑摘要，确定不保存编辑内容吗？';
-    };
-
-    $("#submit-it").click(function(){
-      window.onbeforeunload = null;
-    });
-
-  })();
-</script>
