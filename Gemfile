@@ -87,6 +87,6 @@ gem 'unicorn'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-group :development, :test do
-  gem 'quiet_assets'
-end
+# group :development, :test do
+#   gem 'quiet_assets'
+# end
