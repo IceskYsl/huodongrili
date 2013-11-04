@@ -70,8 +70,13 @@ class AccountsController < ApplicationController
       @account = Account.find_or_create_for_google(response)
       if @account.persisted?
         set_session
-        flash[:notice] = "Signed in with #{provider.to_s.titleize} successfully."
-        redirect_to(root_path)        
+        if @account.bio.blank?
+          flash[:notice] = "登录成功,请设置自己的资料."
+          redirect_to(edit_account_path(@account.id))        
+        else
+          flash[:notice] = "登录成功."
+          redirect_to(root_path)
+        end
       else
         flash[:notice] = "登录失败，请检查你的key是否输入正确."
         redirect_to(root_path)    

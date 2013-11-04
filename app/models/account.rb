@@ -30,7 +30,7 @@ class Account
   
   # 聊天者
   field :seq, :type => Integer, :default => 1 #排序，越大的往前
-  field :is_chat, :type => Integer, :default => 0
+  field :is_chat, :type => Integer, :default => 1
   field :nickname
   field :city
   field :image
@@ -49,7 +49,6 @@ class Account
   field :twitter
   field :facebook
   field :google
-  
 
   
   embeds_many :authorizations
