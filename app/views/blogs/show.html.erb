@@ -13,6 +13,9 @@
                           <strong class="year"><%=@blog.created_at.year%></strong>
                   </small>
           </div>
+		  <%if (@blog.account_id && @blog.account_id == session[:account_id]) %>
+		  	<div class="pull-right"><%=link_to "编辑",edit_blog_path(@blog.id)%></div>
+		  <%end%>
           <div class="p-con-full">    
 				<%unless @blog.image.blank?%>
 	            	<p><%=image_tag @blog.image,:alt=>"#{@blog.title}" %></p>
