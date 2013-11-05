@@ -16,7 +16,7 @@ Huodong::Application.routes.draw do
   get '/abouts/client' => 'about#client'  
   
   get "/search" => "search#index", as: 'search'
-  get "/u/:login" => "accounts#u", as: 'u'
+  get "/u/:login" => "accounts#u", :login => /.+/, as: 'u'
  
   
 
