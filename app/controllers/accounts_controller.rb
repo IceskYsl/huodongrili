@@ -34,6 +34,9 @@ class AccountsController < ApplicationController
   
   def edit
     @account = current_account
+    unless (@account && @account.id == params[:id].to_i)
+      redirect_to(root_path, :notice => '你不能编辑别人的资料 :)')
+    end
   end
   
   def update

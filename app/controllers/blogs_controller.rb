@@ -41,10 +41,16 @@ class BlogsController < ApplicationController
   
   def edit
     @blog = Blog.unscoped.find(params[:id])
+    unless (@blog && @blog.account_id == session[:account_id])
+      redirect_to(root_path, :notice => '你不能编辑别人的文章 :)')
+    end
   end
   
   def update
     @blog = Blog.unscoped.find(params[:id])
+    unless (@blog && @blog.account_id == session[:account_id])
+      redirect_to(root_path, :notice => '你不能编辑别人的文章 :)')
+    end
     if @blog.update_attributes(params[:blog])
       @blog.tags = params[:blog][:tag_list].split(/\s+/).collect { |tag| tag.strip }.uniq if params[:blog][:tag_list]
       @blog.save

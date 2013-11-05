@@ -24,10 +24,16 @@ class ChatsController < ApplicationController
   #确认
   def confirm
     @chat = Chat.find(params[:id])  
+    unless (@chat && @chat.account_id == session[:account_id].to_i)
+      redirect_to(root_path, :notice => '你不能看到别人的聊天请求 :)')
+    end
   end
   
   def update
     @chat = Chat.find(params[:id])  
+    unless (@chat && @chat.account_id == session[:account_id].to_i)
+      redirect_to(root_path, :notice => '你不能看到别人的聊天请求 :)')
+    end
     @chat.state = 1
     @chat.save
     @chat.send_confirm_mail
