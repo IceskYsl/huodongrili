@@ -67,6 +67,21 @@ class Account
     "http://www.huodongrili.com/u/#{self.login || self.id}"
   end
   
+  #role
+  def has_role?(role)
+    self.roles.include?(role)
+  end
+  
+  def add_role(role)
+    self.roles.push(role)
+    self.save
+  end
+  
+  def del_role(role)
+    self.roles.delete(role)
+    self.save
+  end
+  
   def u_login
      self.login.blank? ? self.id : self.login
   end
@@ -122,12 +137,8 @@ class Account
     self.roles.include?(role)
   end
   
-  def add_role(role)
-    self.push(:roles, role)
-  end
+ 
   
-  def del_role(role)
-    self.pull(:roles, role)
-  end
+
   
 end
