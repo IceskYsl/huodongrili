@@ -1,7 +1,13 @@
 # coding: utf-8
 class Cpanel::AccountsController < Cpanel::BaseController
   def index
-    @items = Account.unscoped.desc(:_id).paginate :page => params[:page], :per_page => 100
+    sort = params[:sort]
+    case sort
+    when "hot"
+      @items = Account.unscoped.hot.paginate :page => params[:page], :per_page => 100
+    else
+      @items = Account.unscoped.recent.paginate :page => params[:page], :per_page => 100
+    end
   end
   
   def up

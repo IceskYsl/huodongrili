@@ -1,7 +1,15 @@
 <% content_for :sitemap do %>
   <span class="current">用户列表</span>
 <% end %>
+
 <h1>用户列表</h1>
+
+<div class="pull-right sort_box">
+	<%=link_to "最新注册",cpanel_accounts_path(:sort=>"recent")%>	
+	<%=link_to "最高排序",cpanel_accounts_path(:sort=>"hot")%>	
+</div>
+
+
 
 <table class="table table-condensed">
   <tr class="head">
