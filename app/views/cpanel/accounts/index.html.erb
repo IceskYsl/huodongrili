@@ -1,0 +1,31 @@
+<% content_for :sitemap do %>
+  <span class="current">用户列表</span>
+<% end %>
+<h1>用户列表</h1>
+
+<table class="table table-condensed">
+  <tr class="head">
+    <td class="first">ID</td>
+    <td style="width:200px">Username</td>
+    <td >email</td>
+	<td >login</td>
+    <td>at</td>
+    <td>State</td>
+    <td></td>
+  </tr>
+
+<% @items.each do |account| %>
+  <tr class="<%= "deleted" if !account.deleted_at.blank? %>">
+    <td class="first"><%= account.id %></td>
+    <td><%= truncate(account.username,:length => 30) %></td>
+    <td><%= account.email %></td>
+    <td><%= account.login %></td>
+    <td><%= account.created_at %></td>
+    <td>
+ 	</td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @items %>
+
+ 

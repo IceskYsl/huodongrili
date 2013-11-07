@@ -20,7 +20,7 @@
 							  	<div class="pull-right"><%=link_to "编辑",edit_blog_path(blog.id)%></div>
 							  <%end%>
                               <p class="p-cat">
-								By: <%= raw blog.account.try(:username) %> 
+								By: <a href="/u/<%=blog.account.u_login%>"><%= raw blog.account.try(:username) %></a>
 								Tag:<%=blog_tags_tag(blog)%> 
 							  </p>
                               <small class="p-time">

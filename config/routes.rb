@@ -1,4 +1,8 @@
 Huodong::Application.routes.draw do
+  get "blogs/index"
+  get "chats/index"
+  get "accounts/index"
+  get "home/index"
   get "search/index"
   get "users/index"
   get "index/index"
@@ -58,6 +62,29 @@ Huodong::Application.routes.draw do
       get :client
     end    
   end
+  
+  
+  namespace :cpanel do
+      root :to => "home#index"
+      resources :blogs
+      resources :posts do 
+        collection do
+          post :preview
+        end
+      end
+
+      resources :chats
+      resources :accounts do 
+        collection do
+          get :merge
+          post :merge
+        end
+      end
+ 
+
+    end
+
+  
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

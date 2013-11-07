@@ -6,6 +6,8 @@ class Account
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::BaseModel
+  include Mongoid::SoftDelete 
+
   extend OmniauthCallbacks
   
   
