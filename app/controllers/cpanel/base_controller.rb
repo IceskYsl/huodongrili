@@ -7,7 +7,7 @@ class Cpanel::BaseController < ApplicationController
 
    def require_admin
       authenticate_or_request_with_http_basic do |username, password|
-          username == "zoe" && password == "huodongrili"
+          username == "zoe" && password == "qq71681430"
        end
    end
    
