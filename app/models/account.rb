@@ -68,7 +68,7 @@ class Account
   end
   
   def u_login
-    self.login || self.id
+     self.login.blank? ? self.id : self.login
   end
   
   def self.find_by_login(login)
