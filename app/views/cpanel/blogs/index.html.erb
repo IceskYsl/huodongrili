@@ -1,2 +1,26 @@
-<h1>Cpanel::Blogs#index</h1>
-<p>Find me in app/views/cpanel/blogs/index.html.erb</p>
+<% content_for :sitemap do %>
+  <span class="current"> 故事集</span>
+<% end %>
+<h1>故事集</h1>
+
+<table class="table table-condensed">
+  <tr class="head">
+    <td class="first">ID</td>
+    <td >作者</td>
+    <td style="width:150px">标题</td>
+    <td>状态</td>
+    <td>时间</td>
+  </tr>
+
+<% @items.each do |blog| %>
+  <tr class="<%= "deleted" if !blog.deleted_at.blank? %>">
+    <td class="first"><%= blog.id %></td>
+    <td><%= blog.account.try(:username)%></td>
+    <td><%= blog.title %></td>
+	<td><%= blog.state %></td>
+    <td><%= blog.created_at %></td>
+
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @items %>

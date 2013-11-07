@@ -3,6 +3,8 @@ class Chat
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::BaseModel
+  include Mongoid::SoftDelete
+
   # include Mongoid::MultiParameterAttributes
   
   # include Mongoid::Attributes::Dynamic
