@@ -21,6 +21,13 @@ pre {
 .group ul { margin:0 20px;}
 .pagination { clear:both; margin-top:10px; text-align: left;}
 
+.alert-success{background-color:#dff0d8;border-color:#d6e9c6;color:#468847}
+.alert-danger,.alert-error{background-color:#f2dede;border-color:#eed3d7;color:#b94a48}
+.alert-info{background-color:#d9edf7;border-color:#bce8f1;color:#3a87ad}
+.alert-block{padding-top:14px;padding-bottom:14px}
+.alert-block>p,.alert-block>ul{margin-bottom:0}.alert-block p+p{margin-top:5px}
+
+
 table tr.deleted td { text-decoration: line-through; color:#999}
 
 html {
@@ -254,3 +261,4 @@ div.field .hint { font-size:12px; color:#999;}
  
 
 #post_upload_images { position:absolute;bottom:0;right:0;width:0;height:0;overflow:hidden; }
+

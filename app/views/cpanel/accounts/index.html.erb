@@ -6,22 +6,33 @@
 <table class="table table-condensed">
   <tr class="head">
     <td class="first">ID</td>
-    <td style="width:200px">Username</td>
+    <td style="width:150px">Username</td>
     <td >email</td>
 	<td >login</td>
-    <td>at</td>
-    <td>State</td>
-    <td></td>
+	<td >社交帐号</td>
+    <td>注册时间</td>
+    <td>排序</td>
+    <td>操作</td>
   </tr>
 
 <% @items.each do |account| %>
   <tr class="<%= "deleted" if !account.deleted_at.blank? %>">
     <td class="first"><%= account.id %></td>
-    <td><%= truncate(account.username,:length => 30) %></td>
+    <td><%= link_to account.username,u_path(:login=>account.u_login),:title=>account.bio %></td>
     <td><%= account.email %></td>
     <td><%= account.login %></td>
-    <td><%= account.created_at %></td>
     <td>
+    	<%=link_to image_tag("website.png",:size=>"16x16",:alt=>"我的网站"),account.website,:target=>"_blank" unless account.website.blank?%>	
+		<%=link_to image_tag("weibo.png",:size=>"16x16",:alt=>"微博"),account.weibo_url,:target=>"_blank" unless account.weibo.blank? %>
+		<%=link_to image_tag("zhihu.png",:size=>"16x16",:alt=>"知乎"),account.zhihu_url,:target=>"_blank" unless account.zhihu.blank? %>
+		<%=link_to image_tag("douban.png",:size=>"16x16",:alt=>"豆瓣"),account.douban_url,:target=>"_blank" unless account.douban.blank?%>
+    </td>
+    <td><%= account.created_at %></td>
+    <td><%= account.seq %></td>
+    <td>
+	    <%= link_to '', up_cpanel_account_path(account), :class => "glyphicon glyphicon-chevron-up" %>
+	    <%= link_to '', down_cpanel_account_path(account), :class => "glyphicon glyphicon-chevron-down" %>
+	</td>
  	</td>
   </tr>
 <% end %>

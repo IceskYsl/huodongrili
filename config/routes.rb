@@ -79,6 +79,10 @@ Huodong::Application.routes.draw do
           get :merge
           post :merge
         end
+        member do
+          get 'up'
+          get 'down'
+        end
       end
  
 
