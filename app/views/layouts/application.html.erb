@@ -28,6 +28,19 @@
 		    autoclose: true,
 		    todayHighlight: true
 		});
+		
+		
+		var $container = $('#container');
+		// initialize
+		$container.masonry({
+		  columnWidth: 300,
+		  gutter: 8,
+		  itemSelector: '.item'
+		});
+		
+		$container.imagesLoaded( function() {
+		  $container.masonry();
+		});
 </script>
 
 </body>

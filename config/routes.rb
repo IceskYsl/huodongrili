@@ -49,6 +49,7 @@ Huodong::Application.routes.draw do
   
   resources :chats do
     collection do 
+      get :waterfall
       get :list
       get :apply
       get :confirm

@@ -8,6 +8,12 @@ class ChatsController < ApplicationController
     @items = scoped_items.recent.hot.paginate(:page => page, :per_page => 100)
   end
   
+  def waterfall
+    page = params[:page] || 1
+    scoped_items = Account.can_chat
+    @items = scoped_items.recent.hot.paginate(:page => page, :per_page => 100)
+  end
+  
  
   def create
     params.permit!

@@ -1,0 +1,44 @@
+<%= stylesheet_link_tag    "waterfall", media: "all", "data-turbolinks-track" => true %>
+
+<div class="span12 well">
+	<h2>约聊天..</h2>
+    <p>欢迎你来到这里约我们聊天， 选择你感兴趣的人开始精彩的聊天之旅吧...</p>
+	<hr />
+
+<div id="container">
+	<%@items.each do |i|%>
+		<div class="item">
+			<h3><%=i.username%></h3>
+							<p>
+								<%=image_tag i.image,:width=>"290",:alt=>"#{i.username}" unless i.image.blank?%>
+							</p>
+							<div class="tags">
+								<p>
+								<%unless i.city.blank?%>
+	 							 <button type="button" class="btn btn-info btn-xs"><%=i.city%></button>
+								<%end%>
+								<%i.tags.each do |tag|%>
+								 <button type="button" class="btn btn-primary btn-xs"><%=tag%></button>
+								<%end%>		
+								</p>				  
+	 							</div>
+								<p>
+									<%=simple_format i.bio%>
+								</p>
+								<p class="pull-left">
+									<%=link_to image_tag("website.png",:size=>"16x16",:alt=>"我的网站"),i.website,:target=>"_blank" unless i.website.blank?%>	
+									<%=link_to image_tag("weibo.png",:size=>"16x16",:alt=>"微博"),i.weibo_url,:target=>"_blank" unless i.weibo.blank? %>
+									<%=link_to image_tag("zhihu.png",:size=>"16x16",:alt=>"知乎"),i.zhihu_url,:target=>"_blank" unless i.zhihu.blank? %>
+									<%=link_to image_tag("douban.png",:size=>"16x16",:alt=>"豆瓣"),i.douban_url,:target=>"_blank" unless i.douban.blank?%>							
+
+								</p>
+		</div>
+	<%end%>
+</div>
+
+<div class="container chats">
+	 <%= will_paginate @items %>
+</div>
+
+</div>
+
