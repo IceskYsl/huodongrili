@@ -6,10 +6,10 @@
 <table class="table table-condensed">
   <tr class="head">
     <td class="first">ID</td>
-    <td style="width:150px">发出人</td>
-    <td >邀请人</td>
-    <td>约聊时间</td>
-	<td>地点</td>
+    <td style="width:150px">接收</td>
+    <td >发出</td>
+    <td>地点</td>
+	<td>约聊时间</td>
     <td>话题</td>
     <td>状态</td>
     <td>时间</td>
@@ -18,11 +18,11 @@
 <% @items.each do |chat| %>
   <tr class="<%= "deleted" if !chat.deleted_at.blank? %>">
     <td class="first"><%= chat.id %></td>
-    <td><%= chat.account.try(:username)%></td>
     <td><%= chat.user.try(:username)%></td>
+    <td><%= chat.account.try(:username)%></td>
     <td><%= chat.location %></td>
     <td><%= chat.date %> <%= chat.when %></td>
-    <td><%= chat.topic %></td>
+    <td><%=link_to chat.topic,"#",:title => chat.body %></td>
 	<td><%= chat.state %></td>
     <td><%= chat.created_at %></td>
 
