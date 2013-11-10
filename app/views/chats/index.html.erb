@@ -7,6 +7,7 @@
 
 <div id="container">
 	<%@items.each do |i|%>
+	<a href="/u/<%=i.u_login%>">
 		<div class="item">
 			<h3><%=i.username%></h3>
 							<p>
@@ -33,6 +34,7 @@
 
 								</p>
 		</div>
+		 </a>
 	<%end%>
 </div>
 
